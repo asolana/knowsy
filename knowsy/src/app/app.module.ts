@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BuscadorComponent } from './buscador/buscador.component';
+import { TrabajosComponent } from './trabajos/trabajos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    TrabajosComponent
   ],
   imports: [
     BrowserModule,
