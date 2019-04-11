@@ -8,19 +8,12 @@ import { Subscriber } from 'rxjs';
   styleUrls: ['./buscador.component.scss']
 })
 export class BuscadorComponent implements OnInit {
-  trabajo=null;
-  filtro: string='';
 
 
-  constructor(private _tarServ:TrabajosService) { }
+  constructor(private _trabajoServ:TrabajosService) { }
 
-  ngOnInit() {
-  this._tarServ.getTrabajoFromAPI().subscribe((listaTrabajo)=>{
-    this.trabajo=listaTrabajo;
-  });
+  ngOnInit() {}
 
-  }
+
   
-
-
 }
