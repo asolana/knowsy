@@ -20,20 +20,32 @@ export class TrabajosService {
   constructor(private _http:HttpClient) { }
 
   //Peticion de datos al servidor
+  getTrabajosFromAPIEmpty(){
+    if(!this._trabajosObs){
+      this._trabajosObs = this._http.get<Trabajo[]>('http://www.mocky.io/v2/5caf02663400009324ab6fa6').pipe(
+        tap(trabs => this._trabajos = trabs),
+        catchError(error => {
+          console.log("Error:", error);
+          return throwError(error);
+        })
+      );
+    }
+  }
   getTrabajosFromAPI(id): Observable<Trabajo[]> {
-   if (this._trabajos) {
-     return of(this._trabajos);
-   } else if (this._trabajosObs) {
-      this._trabajosObs.subscribe(function(lista){
-        console.log("trabajos obs", lista);
-     });
-     return this._trabajosObs;
-   } else {
-     this._trabajosObs = this._http.get<Trabajo[]>('http://www.mocky.io/v2/5caf02663400009324ab6fa6').pipe(
+    console.log("va:", this._trabajos);
+
+    if(!this._trabajos){
+      this.getTrabajosFromAPIEmpty();
+      return this._trabajosObs;
+    }else{  
+      //Aqui me he quedado
+      console.log("va3");
+      this._trabajosObs = this._http.get<Trabajo[]>('http://www.mocky.io/v2/5caf02663400009324ab6fa6').pipe(
        tap(trabs => {
          //filtro
         //  this._trabajos = trabs
         trabs.find(function(tra){
+          
            return tra.nombre == id;
          })
         }),
@@ -42,8 +54,30 @@ export class TrabajosService {
          return throwError(error);
        })
      );
-     return this._trabajosObs;
-   }
+    }
+  //  if (this._trabajos) {
+  //    return of(this._trabajos);
+  //  } else if (this._trabajosObs) {
+  //     this._trabajosObs.subscribe(function(lista){
+  //       console.log("trabajos obs", lista);
+  //    });
+  //    return this._trabajosObs;
+  //  } else {
+  //    this._trabajosObs = this._http.get<Trabajo[]>('http://www.mocky.io/v2/5caf02663400009324ab6fa6').pipe(
+  //      tap(trabs => {
+  //        //filtro
+  //       //  this._trabajos = trabs
+  //       trabs.find(function(tra){
+  //          return tra.nombre == id;
+  //        })
+  //       }),
+  //      catchError(error => {
+  //        console.log("Error:", error);
+  //        return throwError(error);
+  //      })
+  //    );
+  //    return this._trabajosObs;
+  //  }
   }
   
   //Funcion que devuelve un array de trabajos
