@@ -23,10 +23,10 @@ export class ListadoTrabajosComponent implements OnInit {
   ngOnInit() {
     //trabajos = this._traServ.getTrabajos();
 
-    this._traServ.getTrabajos().subscribe((datos) => {
-      //console.log('datos:', listaTareas);
-      this.trabajos = datos;
-    });
+    // this._traServ.getTrabajos().subscribe((datos) => {
+    //   //console.log('datos:', listaTareas);
+    //   this.trabajos = datos;
+    // });
   }
 
 }

@@ -1,5 +1,5 @@
-<section >
-  <figure *ngFor='let trabajo of trabajos'>
+<section class="row" >
+  <figure *ngFor='let trabajo of trabajos' class="col-4">
     <img [src]="'assets/' + trabajo.img" alt="foto"/>
     <h3>{{trabajo.nombre}}</h3>
     <span>Puntuación:</span>
