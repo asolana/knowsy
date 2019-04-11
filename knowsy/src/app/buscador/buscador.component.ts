@@ -9,11 +9,12 @@ import { Subscriber } from 'rxjs';
 })
 export class BuscadorComponent implements OnInit {
 
+  busqueda:string=null;
 
   constructor(private _trabajoServ:TrabajosService) { }
 
   ngOnInit() {}
 
-
+  
   
 }
