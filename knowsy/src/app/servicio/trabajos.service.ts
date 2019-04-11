@@ -48,11 +48,11 @@ export class TrabajosService {
   getTrabajos(): Trabajo[] { return this._trabajos; }
 
   //Funcion que a la cual se le pasa un id y devuelve el trabajo con ese id
-  getTrabajosById(id): Trabajo {
-    return this._trabajos.find(function(trabajo){
-      return trabajo.id == id;
-    });
-  }
+  // getTrabajosById(id): Trabajo {
+  //   return this._trabajos.find(function(trabajo){
+  //     return trabajo.id == id;
+  //   });
+  // }
 
 
 }
