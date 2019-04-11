@@ -24,14 +24,17 @@ export class TrabajosService {
    if (this._trabajos) {
      return of(this._trabajos);
    } else if (this._trabajosObs) {
+      this._trabajosObs.subscribe(function(lista){
+        console.log("trabajos obs", lista);
+     });
      return this._trabajosObs;
    } else {
      this._trabajosObs = this._http.get<Trabajo[]>('http://www.mocky.io/v2/5caf02663400009324ab6fa6').pipe(
        tap(trabs => {
          //filtro
         //  this._trabajos = trabs
-         this._trabajos.find(function(tra){
-           return tra.id == id;
+        trabs.find(function(tra){
+           return tra.nombre == id;
          })
         }),
        catchError(error => {
