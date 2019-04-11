@@ -7,10 +7,12 @@ import { TrabajosComponent } from './trabajos/trabajos.component';
 import { PieComponent } from './pie/pie.component';
 import { ListadoTrabajosComponent } from './listado-trabajos/listado-trabajos.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
+import { BuscadorComponent } from './buscador/buscador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BuscadorComponent,
     TrabajosComponent,
     PieComponent,
     ListadoTrabajosComponent,
