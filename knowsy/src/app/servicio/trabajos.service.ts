@@ -20,7 +20,6 @@ export class TrabajosService {
   constructor(private _http:HttpClient) { }
 
   //Peticion de datos al servidor
-
   getTrabajosFromAPI(id): Observable<Trabajo[]> {
    if (this._trabajos) {
      return of(this._trabajos);
@@ -48,11 +47,11 @@ export class TrabajosService {
   getTrabajos(): Trabajo[] { return this._trabajos; }
 
   //Funcion que a la cual se le pasa un id y devuelve el trabajo con ese id
-  // getTrabajosById(id): Trabajo {
-  //   return this._trabajos.find(function(trabajo){
-  //     return trabajo.id == id;
-  //   });
-  // }
+  getTrabajoById(id): Trabajo {
+    return this._trabajos.find(function(trabajo){
+      return trabajo.id == id;
+    });
+  }
 
 
 }
