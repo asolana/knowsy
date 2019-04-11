@@ -4,11 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TrabajosComponent } from './trabajos/trabajos.component';
+import { PieComponent } from './pie/pie.component';
+import { ListadoTrabajosComponent } from './listado-trabajos/listado-trabajos.component';
+import { CabeceraComponent } from './cabecera/cabecera.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TrabajosComponent
+    TrabajosComponent,
+    PieComponent,
+    ListadoTrabajosComponent,
+    CabeceraComponent
   ],
   imports: [
     BrowserModule,
