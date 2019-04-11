@@ -1,0 +1,12 @@
+<section >
+  <figure *ngFor='let trabajo of trabajos'>
+    <img [src]="trabajo.img" alt="foto"/>
+    <h3>{{trabajo.nombre}}</h3>
+    <span>Puntuación:</span>
+    <span>{{trabajo.puntuacion}}</span>
+    <span>&#11088;</span>
+    <span>Tokens:</span>
+    <span>{{trabajo.monedas}}</span>
+    <span>&#9678;</span>
+  </figure>
+</section>
