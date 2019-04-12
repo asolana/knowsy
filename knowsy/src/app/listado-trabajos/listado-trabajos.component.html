@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-<section >
-  <figure *ngFor='let trabajo of trabajos' [routerLink]="['/trabajos',trabajo.id]">
-    <img [src]="'assets/' + trabajo.img" alt="foto"/>
-    <h3>{{trabajo.nombre}}</h3>
-=======
 <section class="row" >
-  <figure *ngFor='let t of trabajos' class="col-4">
+  <figure *ngFor='let t of trabajos' class="col-4" [routerLink]="['/trabajos',t.id]">
     <img [src]="t.img" alt="foto"/>
     <h3>{{t.nombre}}</h3>
->>>>>>> 4fd11a6a9d963d8dbbf38ff23606f6f524f6f548
     <span>Puntuación:</span>
     <span>{{t.puntuacion}}</span>
     <span>&#11088;</span>
