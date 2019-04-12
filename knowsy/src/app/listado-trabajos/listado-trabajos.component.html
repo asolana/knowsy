@@ -1,6 +1,6 @@
 <section class="row" >
   <figure *ngFor='let t of trabajos' class="col-4">
-    <img [src]="'assets/' + t.img" alt="foto"/>
+    <img [src]="t.img" alt="foto"/>
     <h3>{{t.nombre}}</h3>
     <span>Puntuación:</span>
     <span>{{t.puntuacion}}</span>
