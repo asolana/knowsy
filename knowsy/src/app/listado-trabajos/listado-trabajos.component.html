@@ -1,5 +1,5 @@
 <section >
-  <figure *ngFor='let trabajo of trabajos'>
+  <figure *ngFor='let trabajo of trabajos' [routerLink]="['/trabajos',trabajo.id]">
     <img [src]="'assets/' + trabajo.img" alt="foto"/>
     <h3>{{trabajo.nombre}}</h3>
     <span>Puntuación:</span>
