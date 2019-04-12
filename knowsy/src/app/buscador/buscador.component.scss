@@ -7,15 +7,15 @@ input{
     width: 15vw;
     height: 1.7vw;
     display: inline-block;
-    border: solid  #800000 ;
-    background-color:rgb(255, 220, 220);
+    border: solid #b721ff;
+    background-color:#f2f2f2;
     border-radius: 5px;
 }
 button{
-    width: 5vw;
-    height: 2vw;
-    background-color: #ffe6e6;
-    color:  #001a00;    ;
-    border: solid #800000;
+    border: none;
+    padding: 15% 25% 15% 25%;   
+    background-color:#f2f2f2;
+    color:  #ffffff;    ;
+    background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
     border-radius: 5px;
 }
