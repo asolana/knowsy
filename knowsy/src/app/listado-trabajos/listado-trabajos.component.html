@@ -1,12 +1,14 @@
 <section class="row" >
-  <figure *ngFor='let trabajo of trabajos' class="col-4">
-    <img [src]="'assets/' + trabajo.img" alt="foto"/>
-    <h3>{{trabajo.nombre}}</h3>
+  <figure *ngFor='let t of trabajos' class="col-4">
+    <img [src]="'assets/' + t.img" alt="foto"/>
+    <h3>{{t.nombre}}</h3>
     <span>Puntuación:</span>
-    <span>{{trabajo.puntuacion}}</span>
+    <span>{{t.puntuacion}}</span>
     <span>&#11088;</span>
     <span>Tokens:</span>
-    <span>{{trabajo.monedas}}</span>
+    <span>{{t.monedas}}</span>
     <span>&#9678;</span>
+    <!--cuando sepamos como relacionar datos ya lo haremos bien -->
+    <p>{{t.idCategorias==1?"Animales":t.idCategorias==2?"Cocina":t.idCategorias==3?"lampistería":t.idCategorias==4?"informática":"belleza"}}</p>
   </figure>
 </section>
