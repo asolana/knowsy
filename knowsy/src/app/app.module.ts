@@ -11,6 +11,7 @@ import { ListadoTrabajosComponent } from './listado-trabajos/listado-trabajos.co
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { TrabajodetalleComponent } from './trabajos/trabajodetalle/trabajodetalle.component';
 import { BuscadorComponent } from './buscador/buscador.component';
+import { ValoracionComponent } from './trabajos/valoracion/valoracion.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BuscadorComponent } from './buscador/buscador.component';
     PieComponent,
     ListadoTrabajosComponent,
     CabeceraComponent,
-    TrabajodetalleComponent
+    TrabajodetalleComponent,
+    ValoracionComponent
   ],
   imports: [
     BrowserModule,
