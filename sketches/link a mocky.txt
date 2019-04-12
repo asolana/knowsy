@@ -3,6 +3,8 @@
 http://www.mocky.io/v2/5caf02663400009324ab6fa6  <- la original, incompleta
 http://www.mocky.io/v2/5cb03d4a3100005500e132a5 <- tiene idCategor�as y links a imagenes en el formato correcto
 
+http://www.mocky.io/v2/5cb079673100003e37e134a4 <- un solo trabajo
+
 
 Usuarios
 http://www.mocky.io/v2/5cb0477b3100004b00e132ff <- el original

@@ -54,10 +54,8 @@ export class TrabajosService {
   getTrabajos(): Trabajo[] { return this._trabajos; }
 
   //Funcion que a la cual se le pasa un id y devuelve el trabajo con ese id
-  getTrabajoById(id): Trabajo {
-    return this._trabajos.find(function (trabajo) {
-      return trabajo.id == id;
-    });
+  getTrabajoById(id): Observable<Trabajo> {
+    return this._http.get<Trabajo>('http://www.mocky.io/v2/5cb079673100003e37e134a4');
   }
 
 
