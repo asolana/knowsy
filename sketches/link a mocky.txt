@@ -14,3 +14,4 @@ http://www.mocky.io/v2/5cb06cba3100004c00e13435 <- usuarios con fiable o no fiab
 
 Categorias
 http://www.mocky.io/v2/5cb098d13100004b00e1357c <- inicial
+http://www.mocky.io/v2/5cb0a38c3100006c00e135d5 <- con imagen
