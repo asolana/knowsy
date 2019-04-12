@@ -1,4 +1,4 @@
-export class Trabajo{
+export class Categoria{
     
     constructor(public id:number,
         public nombre:string){
