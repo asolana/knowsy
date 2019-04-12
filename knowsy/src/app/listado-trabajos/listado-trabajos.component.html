@@ -1,19 +1,12 @@
-<<<<<<< HEAD
-<section >
-  <figure *ngFor='let trabajo of trabajos' [routerLink]="['/trabajos',trabajo.id]">
-    <img [src]="'assets/' + trabajo.img" alt="foto"/>
-    <h3>{{trabajo.nombre}}</h3>
-=======
 <section class="row" >
-  <figure *ngFor='let t of trabajos' class="col-4">
+  <figure *ngFor='let t of trabajos' class="col-4" [routerLink]="['/trabajos',t.id]">
     <img [src]="t.img" alt="foto"/>
     <h3>{{t.nombre}}</h3>
->>>>>>> 4fd11a6a9d963d8dbbf38ff23606f6f524f6f548
     <span>Puntuación:</span>
     <span>{{t.puntuacion}}</span>
     <span>&#11088;</span>
     <span>Tokens:</span>
-    <span>{{t.monedas}}</span>
+    <span>{{t.precio}}</span>
     <span>&#9678;</span>
     <!--cuando sepamos como relacionar datos ya lo haremos bien -->
     <p>{{t.idCategoria==1?"Animales":t.idCategoria==2?"Cocina":t.idCategoria==3?"lampistería":t.idCategoria==4?"informática":"belleza"}}</p>
