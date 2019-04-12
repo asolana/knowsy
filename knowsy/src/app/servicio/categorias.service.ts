@@ -16,7 +16,7 @@ export class CategoriasService {
 
   getCategoriasFromAPI(): Observable<Categoria[]> {
     this._categoriasObs = this.$categoriasSub.asObservable();
-    this._http.get<Categoria[]>('http://www.mocky.io/v2/5cb098d13100004b00e1357c').subscribe(
+    this._http.get<Categoria[]>('http://www.mocky.io/v2/5cb0a38c3100006c00e135d5').subscribe(
       data => {
         this._categorias = data;
         this.$categoriasSub.next(this._categorias);
@@ -32,7 +32,7 @@ export class CategoriasService {
   }
 
   buscarCategorias(busqueda: string):void {
-    this._http.get<Categoria[]>('5cb098d13100004b00e1357c').subscribe(
+    this._http.get<Categoria[]>('http://www.mocky.io/v2/5cb0a38c3100006c00e135d5').subscribe(
       data => {
         this._categorias = data.filter( unT=> unT.nombre.toLowerCase().indexOf(busqueda.toLowerCase())>=0 );
         this.$categoriasSub.next(this._categorias);
