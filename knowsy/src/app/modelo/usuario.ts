@@ -5,7 +5,8 @@ export class Usuario{
         public descripcion:string,
         public img:string,
         public estado:boolean,
-        public tokens:number){
+        public tokens:number,
+        public fiable:boolean){
     }
 
 }

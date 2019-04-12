@@ -14,12 +14,16 @@ export class UsuarioService {
 
   getUsuariosFromAPI(): Observable<Usuario[]> {
       return this._http.get<Usuario[]>('http://www.mocky.io/v2/5cb0477b3100004b00e132ff');
-  } 
-
-  getUsuarioById(id){
-    this.getUsuariosFromAPI().subscribe((usuarios) => { this._usuarios = usuarios});
-    return this._usuarios.find(function (unUser) {
-      return unUser.id == id;
-   });
   }
+
+  getUsuarioById(id): Observable<Usuario> {
+    return this._http.get<Usuario>('http://www.mocky.io/v2/5cb07835310000850be13499');
+} 
+
+  // getUsuarioById(id){
+  //   this.getUsuariosFromAPI().subscribe((usuarios) => { this._usuarios = usuarios});
+  //   return this._usuarios.find(function (unUser) {
+  //     return unUser.id == id;
+  //  });
+  // }
 }
