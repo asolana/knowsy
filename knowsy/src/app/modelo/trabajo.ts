@@ -6,7 +6,8 @@ export class Trabajo{
         public puntuacion:number,
         public descripcion:string,
         public precio:number,
-        public img:string){
+        public img:string,
+        public idCategoria:number){
     }
 
 }

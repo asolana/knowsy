@@ -1,2 +1,2 @@
-trabajos http://www.mocky.io/v2/5caf02663400009324ab6fa6
-usuarios http://www.mocky.io/v2/5caf5da13400009b3dab72f2
+http://www.mocky.io/v2/5caf02663400009324ab6fa6  <- la original, incompleta
+http://www.mocky.io/v2/5cb03d4a3100005500e132a5 <- tiene idCategorías y links a imagenes en el formato correcto

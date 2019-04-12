@@ -19,7 +19,7 @@ export class BuscadorComponent implements OnInit {
 
     this._trabajoServ.buscarTrabajos(this.busqueda);
     
-    console.log("buscando", this.busqueda);
+    // console.log("buscando", this.busqueda);
   }
   
 }
