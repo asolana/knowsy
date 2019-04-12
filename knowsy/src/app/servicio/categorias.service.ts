@@ -44,4 +44,8 @@ export class CategoriasService {
     );
   }
 
+  //Funcion que devuelve un array de Categorias
+  getCategorias(): Categoria[] { return this._categorias; }
+
+
 }
