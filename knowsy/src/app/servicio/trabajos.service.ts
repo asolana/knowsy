@@ -22,7 +22,7 @@ export class TrabajosService {
   getTrabajosFromAPI(): Observable<Trabajo[]> {
 
     this._trabajosObs = this.$tareasSub.asObservable();
-    this._http.get<Trabajo[]>('http://www.mocky.io/v2/5caf02663400009324ab6fa6').subscribe(
+    this._http.get<Trabajo[]>('http://www.mocky.io/v2/5cb03d4a3100005500e132a5').subscribe(
       data => {
         this._trabajos = data;
         this.$tareasSub.next(this._trabajos);
@@ -38,7 +38,7 @@ export class TrabajosService {
   }
 
   buscarTrabajos(busqueda: string):void {
-    this._http.get<Trabajo[]>('http://www.mocky.io/v2/5caf02663400009324ab6fa6').subscribe(
+    this._http.get<Trabajo[]>('http://www.mocky.io/v2/5cb03d4a3100005500e132a5').subscribe(
       data => {
         this._trabajos = data.filter( unT=> unT.nombre.toLowerCase().indexOf(busqueda.toLowerCase())>=0 );
         this.$tareasSub.next(this._trabajos);
