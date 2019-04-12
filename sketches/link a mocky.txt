@@ -2,8 +2,10 @@
 
 http://www.mocky.io/v2/5caf02663400009324ab6fa6  <- la original, incompleta
 http://www.mocky.io/v2/5cb03d4a3100005500e132a5 <- tiene idCategor�as y links a imagenes en el formato correcto
+http://www.mocky.io/v2/5cb0919e3100006c00e13542 <- tiene el contador de las puntuaciones
 
 http://www.mocky.io/v2/5cb079673100003e37e134a4 <- un solo trabajo
+http://www.mocky.io/v2/5cb091db3100003e37e13544 <- un trabajo solo con el contador de puntaciones
 
 
 Usuarios

@@ -38,7 +38,7 @@ export class TrabajosService {
   }
 
   buscarTrabajos(busqueda: string):void {
-    this._http.get<Trabajo[]>('http://www.mocky.io/v2/5cb03d4a3100005500e132a5').subscribe(
+    this._http.get<Trabajo[]>('http://www.mocky.io/v2/5cb0919e3100006c00e13542').subscribe(
       data => {
         this._trabajos = data.filter( unT=> unT.nombre.toLowerCase().indexOf(busqueda.toLowerCase())>=0 );
         this.$tareasSub.next(this._trabajos);
@@ -55,8 +55,27 @@ export class TrabajosService {
 
   //Funcion que a la cual se le pasa un id y devuelve el trabajo con ese id
   getTrabajoById(id): Observable<Trabajo> {
-    return this._http.get<Trabajo>('http://www.mocky.io/v2/5cb079673100003e37e134a4');
+    return this._http.get<Trabajo>('http://www.mocky.io/v2/5cb091db3100003e37e13544');
   }
 
+  //Funcion que recoje la valoracion de un trabajo y actualiza
+  setValoracion(id,valoracion){
+    var trab : Trabajo;
+    this._http.get<Trabajo>('http://www.mocky.io/v2/5cb091db3100003e37e13544').subscribe(trabajo => {
+      trab = trabajo;
+      trab.contpuntuacion ++;
+      trab.contpuntuacion == 0 ? trab.puntuacion = valoracion : trab.puntuacion += valoracion;
+    });
+    this._http.post<Trabajo>('http://www.mocky.io/v2/5cb091db3100003e37e13544',trab);
+  }
+
+  getValoracion(id):Number{
+    let valoracion = 0;
+    this._http.get<Trabajo>('http://www.mocky.io/v2/5cb091db3100003e37e13544').subscribe(trabajo => {
+      valoracion = trabajo.puntuacion/trabajo.contpuntuacion;
+    });
+    return valoracion;
+     
+  }
 
 }

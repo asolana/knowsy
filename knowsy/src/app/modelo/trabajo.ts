@@ -4,6 +4,7 @@ export class Trabajo{
         public nombre:string,
         public idusuario:number,
         public puntuacion:number,
+        public contpuntuacion:number,
         public descripcion:string,
         public precio:number,
         public img:string,
