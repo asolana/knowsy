@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+import { TrabajosService } from 'src/app/servicio/trabajos.service';
 
 @Component({
-  selector: 'app-trabajodetalle',
+  selector: 'trabajodetalle',
   templateUrl: './trabajodetalle.component.html',
   styleUrls: ['./trabajodetalle.component.scss']
 })
 export class TrabajodetalleComponent implements OnInit {
-
-  constructor(private _http:HttpClient) { }
+  public trabajo= null;
+  
+  constructor(private _trabajoServ:TrabajosService) { }
 
   ngOnInit() {
   }
