@@ -1,4 +1,4 @@
-Trabajos
+﻿Trabajos
 
 http://www.mocky.io/v2/5caf02663400009324ab6fa6  <- la original, incompleta
 http://www.mocky.io/v2/5cb03d4a3100005500e132a5 <- tiene idCategor�as y links a imagenes en el formato correcto
@@ -6,3 +6,4 @@ http://www.mocky.io/v2/5cb03d4a3100005500e132a5 <- tiene idCategor�as y links 
 
 Usuarios
 http://www.mocky.io/v2/5cb0477b3100004b00e132ff <- el original
+http://www.mocky.io/v2/5cb06cba3100004c00e13435 <- usuarios con fiable o no fiable
