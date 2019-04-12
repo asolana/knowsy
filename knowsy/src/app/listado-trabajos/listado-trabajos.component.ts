@@ -17,7 +17,7 @@ export class ListadoTrabajosComponent implements OnInit {
     // this.trabajos = this._traServ.getTrabajos();
     // console.log(this.trabajos);
 
-    this._traServ.getTrabajosFromAPI("").subscribe((datos) => {
+    this._traServ.getTrabajosFromAPI().subscribe((datos) => {
       //console.log('datos:', listaTareas);
       this.trabajos = datos;
     });

@@ -17,7 +17,7 @@ export class BuscadorComponent implements OnInit {
   ngOnInit() {}
   buscar() {
 
-    this._trabajoServ.getTrabajosFromAPI(this.busqueda);
+    this._trabajoServ.buscarTrabajos(this.busqueda);
     
     console.log("buscando", this.busqueda);
   }
