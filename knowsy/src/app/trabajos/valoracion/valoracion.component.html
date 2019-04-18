@@ -1,10 +1,21 @@
-<h3>Valoración</h3>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<img [src]="'assets/' + trabajo.img" alt="foto"/>
-<h4>Nombre de servicio</h4>
-<h4>Nombre usuario</h4>
-<h4>Comentarios</h4>
-<span>&#11088;</span>
+<section>
+    <h3>Valoración</h3>
+        <img [src]="'assets/' + trabajo.img" alt="foto"/>
+        <p>Nombre de servicio</p>
+        <p>Nombre usuario</p>
+        <p>Comentarios</p>
+        <p>Valoración</p>
+            
+            <span>
+                <span  [class]= "puntuacion>0? 'fa fa-star checked': 'fa fa-star'"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </span><br />
 
-<button>Reportar</button>
-<button>Aceptar</button>
+        <button>Reportar</button>
+        <button>Aceptar</button>
+</section>
