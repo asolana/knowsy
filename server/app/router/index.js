@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const user = require('./user');
-const pet = require('./pet');
+const usuario = require('./usuario');
+//const categoria = require('./categoria');
+//const tarea = require('./tarea');
 
 
 // middleware to use for all requests
@@ -15,8 +16,9 @@ router.get('/', function(req, res) {
 	res.json({ message: 'hooray! welcome to our api!' });	
 });
 
-router.use(user);
-router.use(pet);
+router.use(usuario);
+//router.use(categoria);
+//router.use(tarea);
 
 // FUNCTIONS FOR TRAINEDS
 
