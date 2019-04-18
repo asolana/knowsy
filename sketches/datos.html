@@ -7,34 +7,34 @@
   <body>
   	<script type="text/javascript">
   		/**Propuestas de modelos de datos**/
-  		var idCategoria = [
-  		{id:1, nombre:"animales", img:"assets/img/categorias/cat01.jpg"},
-  		{id:2, nombre:"cocina", img:"assets/img/categorias/cat02.jpg"},
-  		{id:3, nombre:"lampisteria", img:"assets/img/categorias/cat03.jpg"},
-  		{id:4, nombre:"informática", img:"assets/img/categorias/cat04.jpg"},
-  		{id:5, nombre:"belleza", img:"assets/img/categorias/cat05.jpg"}
+  		var categorias = [
+  		{nombre:"animales", img:"assets/img/categorias/cat01.jpg"},
+  		{nombre:"cocina", img:"assets/img/categorias/cat02.jpg"},
+  		{nombre:"lampisteria", img:"assets/img/categorias/cat03.jpg"},
+  		{nombre:"informática", img:"assets/img/categorias/cat04.jpg"},
+  		{nombre:"belleza", img:"assets/img/categorias/cat05.jpg"}
   		];
 
-  		var datostarea = 
+  		var tareas = 
   		[
-  		{id:1, nombre: "pasear perro", idusuario:1, puntuacion: 4, contpuntuacion: 1, descripcion: "paseo perros", precio: 450, img:"assets/img/tareas/foto01.jpg", idCategoria:1},
-  		{id:2, nombre: "cocinar pato", idusuario:1, puntuacion: 4, contpuntuacion: 1, descripcion: "delicioso", precio: 420, img:"assets/img/tareas/foto02.jpg", idCategoria:2},
-  		{id:3, nombre: "reparar goteras", idusuario:2, puntuacion: 4, contpuntuacion: 2, descripcion: "no goteará ", precio: 50, img:"assets/img/tareas/foto03.jpg", idCategoria:3},
-  		{id:4, nombre: "peluquería", idusuario:1, puntuacion: 4, contpuntuacion: 3, descripcion: "lorem ipsum", precio: 650, img:"assets/img/tareas/foto04.jpg", idCategoria:5},
-  		{id:5, nombre: "bañar caballos", idusuario:1, puntuacion: 4, contpuntuacion: 2, descripcion: "lorem ipsum", precio: 450, img:"assets/img/tareas/foto05.jpg", idCategoria:1},
-  		{id:6, nombre: "programación ", idusuario:1, puntuacion: 4, contpuntuacion: 1, descripcion: "programación entre comillas, real", precio: 450, img:"assets/img/tareas/foto06.jpg", idCategoria:4},
+  		{nombre: "pasear perro", idusuario:"1", puntuacion: 4, contpuntuacion: 1, descripcion: "paseo perros", precio: 450, img:"assets/img/tareas/foto01.jpg", idCategoria:"1"},
+  		{nombre: "cocinar pato", idusuario:"1", puntuacion: 4, contpuntuacion: 1, descripcion: "delicioso", precio: 420, img:"assets/img/tareas/foto02.jpg", idCategoria:"2"},
+  		{nombre: "reparar goteras", idusuario:"2", puntuacion: 4, contpuntuacion: 2, descripcion: "no goteará ", precio: 50, img:"assets/img/tareas/foto03.jpg", idCategoria:"3"},
+  		{nombre: "peluquería", idusuario:"1", puntuacion: 4, contpuntuacion: 3, descripcion: "lorem ipsum", precio: 650, img:"assets/img/tareas/foto04.jpg", idCategoria:"5"},
+  		{nombre: "bañar caballos", idusuario:"1", puntuacion: 4, contpuntuacion: 2, descripcion: "lorem ipsum", precio: 450, img:"assets/img/tareas/foto05.jpg", idCategoria:"1"},
+  		{nombre: "programación ", idusuario:"1", puntuacion: 4, contpuntuacion: 1, descripcion: "programación entre comillas, real", precio: 450, img:"assets/img/tareas/foto06.jpg", idCategoria:"4"},
   		];
 		console.log(JSON.stringify(datostarea));
     	console.log(JSON.stringify({id:1, nombre: "admin ",descripcion: "soy un administrador", img:"assets/img/usuario/admin.jpg",estado:true,tokens:23000,fiable:true}));
 
-		var datosUsuario = [
-			{id:1, nombre: "admin ",descripcion: "soy un administrador", img:"assets/img/usuario/admin.jpg",estado:true,tokens:23000,fiable:true},
-			{id:2, nombre: "admin2 ",descripcion: "soy otro administrador", img:"assets/img/usuario/admin2.jpg",estado:false,tokens:50000, fiable:false}
+		var usuarios = [
+			{nombre: "admin ",descripcion: "soy un administrador", img:"assets/img/usuario/admin.jpg",estado:true,tokens:23000,fiable:true},
+			{nombre: "admin2 ",descripcion: "soy otro administrador", img:"assets/img/usuario/admin2.jpg",estado:false,tokens:50000, fiable:false}
 		];
 
 		console.log(JSON.stringify(datosUsuario));
 
-		console.log(JSON.stringify(idCategoria));
+		console.log(JSON.stringify(idCategoria)")";
   	</script>
   
   </body>
