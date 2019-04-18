@@ -1,3 +1,28 @@
-<p>
-  usuario works!
-</p>
+<section class="container-fluid">
+  <div class="row">
+      <figure class="col-md-3">
+          <h2>{{usuario.nombre}}</h2>
+          <img [src]="usuario.img" alt="foto"/>
+      </figure>
+      <article class="col-6">
+        <p>
+          <span>Disponibilidad: </span>
+          <span>{{usuario.estado?"Disponible":"Ocupado"}}</span>
+        </p>
+        <p>
+          <span>Tokens: </span>
+          <span>{{usuario.tokens}}</span><span>&#9678;</span>
+        </p>
+        <p>
+          <span>¿Es de fiar?</span>
+          <span [class]="usuario.fiable?'fiable':'noDeFiar'">{{usuario.fiable?"¡Es de fiar!":"Cuidado este usuario tiene muy malas valoraciones"}}</span>
+        </p>
+        <p>
+            {{usuario.descripcion}}
+        </p>
+      </article>
+  </div>
+    
+    
+</section>
+

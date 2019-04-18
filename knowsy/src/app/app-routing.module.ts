@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TrabajosComponent } from './trabajos/trabajos.component';
 import { TrabajodetalleComponent } from './trabajos/trabajodetalle/trabajodetalle.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { CategoriaComponent } from './categoria/categoria.component';
 import { ValoracionComponent } from './trabajos/valoracion/valoracion.component';
 
 const routes: Routes = [
@@ -12,6 +13,8 @@ const routes: Routes = [
  
   {path: 'valoracion', component: ValoracionComponent, pathMatch: 'full'},
 
+  {path: 'categorias', component: CategoriaComponent, pathMatch: 'full'},
+  {path: 'trabajos/:id/valoracion', component: ValoracionComponent, pathMatch: 'full'},
   {path: '', redirectTo:'trabajos', pathMatch: 'full'},
   { path: '**', component: TrabajosComponent, pathMatch: 'full' },
 ];

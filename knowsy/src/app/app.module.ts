@@ -13,6 +13,7 @@ import { TrabajodetalleComponent } from './trabajos/trabajodetalle/trabajodetall
 import { BuscadorComponent } from './buscador/buscador.component';
 import { ValoracionComponent } from './trabajos/valoracion/valoracion.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { CategoriaComponent } from './categoria/categoria.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
     CabeceraComponent,
     TrabajodetalleComponent,
     ValoracionComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,

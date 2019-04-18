@@ -5,10 +5,11 @@
 <h4>Servicio: {{trabajo?.nombre}}</h4>
 <h4>Puntuación: {{trabajo?.puntuacion}}</h4>
 <h4>Tokens: {{trabajo?.tokens}} <span>&#9678;</span></h4>
+<h4>Precio:{{trabajo?.precio}}</h4>
 
 
 <button (click)="contratar()"> Contratar</button>
-<button>Finalizar</button>
+<button [routerLink]="['/trabajos',trabajo.id,'valoracion']">Finalizar</button>
 <div class="alert alert-warning alert-dismissable">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
   <strong>¡Atento!</strong> Puedes puntuar el trabajo recibido
