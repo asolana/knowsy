@@ -7,15 +7,22 @@
     <p>Puntuación: {{user?.puntuacion}}</p>
     <p>Comentarios</p>
     <p>Valoración</p>
-    <span>
+    <!-- <span>
         <span [class]="puntuacion>0? 'fa fa-star checked': 'fa fa-star'"></span>
         <span [class]="puntuacion>1? 'fa fa-star checked': 'fa fa-star'"></span>
         <span [class]="puntuacion>2? 'fa fa-star checked': 'fa fa-star'"></span>
         <span [class]="puntuacion>3? 'fa fa-star checked': 'fa fa-star'"></span>
         <span [class]="puntuacion>4? 'fa fa-star checked': 'fa fa-star'"></span>
         <span [class]="puntuacion>5? 'fa fa-star checked': 'fa fa-star'"></span>
-    </span><br />
+    </span><br /> -->
+    <span>
+        <span (click)="valorar(1)" [class]="puntuacion>=1? 'fa fa-star checked': 'fa fa-star'"></span>
+        <span (click)="valorar(2)" [class]="puntuacion>=2? 'fa fa-star checked': 'fa fa-star'"></span>
+        <span (click)="valorar(3)" [class]="puntuacion>=3? 'fa fa-star checked': 'fa fa-star'"></span>
+        <span (click)="valorar(4)" [class]="puntuacion>=4? 'fa fa-star checked': 'fa fa-star'"></span>
+        <span (click)="valorar(5)" [class]="puntuacion>=5? 'fa fa-star checked': 'fa fa-star'"></span>
+    </span>
 
     <button (click)="reportar()">Reportar</button>
-    <button (click)="valorar()">Aceptar</button>
+    <button (click)="aceptarValoracion()">Aceptar</button>
 </section>

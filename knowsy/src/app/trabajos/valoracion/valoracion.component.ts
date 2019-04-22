@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TrabajosService } from 'src/app/servicio/trabajos.service';
 import { UsuarioService } from 'src/app/servicio/usuario.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Trabajo } from 'src/app/modelo/trabajo';
 
 @Component({
@@ -12,12 +13,13 @@ import { Trabajo } from 'src/app/modelo/trabajo';
 export class ValoracionComponent implements OnInit {
 
   trabajo: Trabajo;
-  puntuacion = 1;
+  puntuacion = 0;
    
   constructor(
     private _trabServ:TrabajosService, 
     private _userServ:UsuarioService,
-    private _route:ActivatedRoute) { }
+    private _route:ActivatedRoute,
+    private _router:Router) { }
 
   ngOnInit() {
     this._route.params.subscribe(parametros => {
@@ -26,20 +28,30 @@ export class ValoracionComponent implements OnInit {
       this._trabServ.getTrabajoById(id).subscribe(trab => {
         this.trabajo = trab;
       });
-      console.log('trabajo:', this.trabajo);
-      
+      console.log('trabajo:', this.trabajo); 
     })
   }
 
 
   reportar(){
-
+    //Funcionalidad futura
+    console.log(`Reportando a: ${this.trabajo.id}`)
   }
 
-  valorar(){
-
+  valorar(valoracion){
+    this.puntuacion = valoracion;
   }
 
+  aceptarValoracion(){
+    try{
+      //Enviar actualizacion de datos
+      this._trabServ.setValoracion(this.trabajo.id, this.puntuacion)
+      console.log(`Puntuacion: ${this.trabajo.puntuacion}, Contador: ${this.trabajo.contpuntuacion}`)
+      this._router.navigate(['/trabajos'])
+    }catch(err){
+      console.log(err);
+    }
+  }
 }
 
 
