@@ -78,22 +78,13 @@ router.route('/tareas/:id')
 
     })
     .delete(function (req, res) {
-        Tarea.findById(ObjectId(req.params.id)).then(unaTarea => {
-            if(unaTarea) {
-                unaTarea.delete();
-            }else {
-                res.status(409).send({ message: 'This tarea does not exist' });
-                unaTarea = null;
+        Tarea.findByIdAndRemove({ _id: req.params.id}, function(err, tarea){
+            if(err){
+                console.log(`Error: ${err}`)
+                res.send(err);
             }
-        }).then(tareaDeleted => {
-            console.log('tarea Deleted:', tareaDeleted);
-
-            if (tareaDeleted) {
-                res.json(tareaDeleted);
-            }
-        }).catch(err => {
-            console.log('Error eliminando tarea:', err);
-            res.status(500).send({ message: 'Server error' });
+            console.log(`Tarea Eliminada: ${tarea}`)
+            
         });
     });
 
