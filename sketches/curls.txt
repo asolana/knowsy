@@ -1,0 +1,18 @@
+#USUARIOS
+Mostrar todos los usuarios
+curl http://172.27.96.184:8080/api/usuarios
+Añadir un usuario
+curl -d "{nombre: \"Pepito Grillo\", contrasena: \"1234\", email:\"pepegri@hola.com\", descripcion: \"Me han insertado a través de la API, soy muy moderno se nota que me va la marcha\", img:\"assets/img/usuario/admin.jpg\",estado:true,tokens:20,fiable:true}\" -H "Content-Type: application/json" http://172.27.96.184:8080/api/usuarios
+
+Mostrar Un usuario por ID
+
+Añadir un usuario
+
+
+Eliminar un usuario
+
+#TAREAS
+
+
+
+#Categorias

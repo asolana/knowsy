@@ -53,9 +53,10 @@ router.route('/usuarios')
     router.route('/usuarios/:id')
 
     .get(function (req, res) {
+        idUsuario = req.params.id;
 
-        Usuario.find().then(usuarios => {
-            res.json(usuarios);
+        Usuario.findById(idUsuario).then(usuario => {
+            res.json(usuario);
         }).catch(err => {
             console.log('Error getting usuarios:', err);
             res.status(500).send({ message: 'Server error' });

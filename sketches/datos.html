@@ -26,7 +26,9 @@
   		{nombre: "programación ", idusuario:"1", puntuacion: 4, contpuntuacion: 1, descripcion: "programación entre comillas, real", precio: 450, img:"assets/img/tareas/foto06.jpg", idCategoria:"4"},
   		];
 
-    	
+      //ejemplo de como añadir por post
+
+    	curl -d "{\"nombre\": \"Pepito Grillo\", contrasena: \"1234\", email:\"pepegri@hola.com\", descripcion: \"Me han insertado a través de la API, soy muy moderno se nota que me va la marcha\", img:\"assets/img/usuario/admin.jpg\",estado:true,tokens:20,fiable:true}" -H "Content-Type: application/json" http://172.27.96.184:8080/api/usuarios
 
 		var usuarios = [{nombre: "Juan Pedrín ", contrasena: "1234", email:"juanpe@hola.com", descripcion: "Me llamo Juan y me gusta ir a la playa y leer libros de poesía.", img:"assets/img/usuario/admin.jpg",estado:true,tokens:23000,fiable:true}, {nombre: "Marta Pedrín ",contrasena: "1234", email:"marta@hola.com", descripcion: "Soy administradora de fincas, me gustan las películas de Rocky. Lorem ipsum", img:"assets/img/usuario/admin2.jpg",estado:false,tokens:50000, fiable:false}];
     console.log(JSON.stringify(usuarios));
