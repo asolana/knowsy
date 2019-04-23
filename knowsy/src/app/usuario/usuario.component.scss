@@ -3,6 +3,10 @@ section{
     margin: 4%;
 }
 
+aside{
+        margin: 0% 4% 4% 4%;
+}
+
 article{
     margin-top:3%;
 }
@@ -40,10 +44,12 @@ p:first-letter{
     border-radius: 1vw;
     margin-left: 1vw;
 }
-button{
-    background-color:#c081c2;
 
-}
-.serv{
-    border: solid 5px coral;
-}
+        button{
+            margin-bottom: 2%;
+            margin-right: 2%;
+        }
+
+        #eliminar:hover{
+            background-color:#c94c4c;
+        }
