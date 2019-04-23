@@ -1,11 +1,19 @@
-input{
-    margin: 7px;
-}
-label{
-    margin: 10px;
-    font-size: 20px;
-}
 h3{
     color:#404040;
 }
 
+form{
+    width: 50%;
+    margin:5%;
+}
+    input{
+        width: 70%;
+    }
+
+    label{
+        margin-right: 1%;
+    }
+
+button{
+    margin:2% 0% 4% 0% ;
+}
