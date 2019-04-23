@@ -21,7 +21,6 @@ export class UsuarioComponent implements OnInit {
   ngOnInit() {
     // suscribirse a los parámetros
     this._route.params.subscribe(parametros => {
-      console.log('parametros:', parametros);
       this.uid = parametros['id'];
       // suscribirse al usuario
       this._servUser.getUsuarioById(this.uid).subscribe(unUsuario => {
