@@ -12,6 +12,7 @@ export class UsuarioComponent implements OnInit {
 
   // usuario = new Usuario(1,"pepito ","e@e.com",null,'hola',"assets/img/usuario/admin.jpg",true,23000,false);
   usuario: Usuario;
+  uid;
   constructor( 
     private _route: ActivatedRoute,
     private _servUser: UsuarioService
@@ -21,9 +22,9 @@ export class UsuarioComponent implements OnInit {
     // suscribirse a los parámetros
     this._route.params.subscribe(parametros => {
       console.log('parametros:', parametros);
-      const uid = parametros['id'];
+      this.uid = parametros['id'];
       // suscribirse al usuario
-      this._servUser.getUsuarioById(uid).subscribe(unUsuario => {
+      this._servUser.getUsuarioById(this.uid).subscribe(unUsuario => {
         this.usuario = unUsuario;
         console.log('Usuariooooo: '+this.usuario);
       });
