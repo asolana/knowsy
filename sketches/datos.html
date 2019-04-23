@@ -43,6 +43,18 @@
     //update usuario
     curl -X PUT -H "Content-Type: application/json" -d "{\"nombre\": \"Pepito Grillo\", \"contrasena\": \"1234\", \"email\":\"pepegri@hola.com\", \"descripcion\": \"mi descripción es hola hola hola holh hola hola\", \"img\":\"assets/img/usuario/admin.jpg\",\"estado\":\"true\",\"tokens\":20,\"fiable\":\"true\"}" "http://172.27.96.184:8080/api/usuarios/5cbeef79a16d840eb4a0a660"
 
+    //update idusuario en tareas
+    curl -X PUT -H "Content-Type: application/json" -d "{ \"nombre\" : \"cocinar pato\", \"idusuario\" : \"5cbec7c6b8d5fc4af5a3bce8\", \"puntuacion\" : 4, \"contpuntuacion\" : 1, \"descripcion\" : \"delicioso\", \"precio\" : 420, \"img\" : \"assets/img/tareas/foto02.jpg\", \"idCategoria\" : \"2\"}" "http://172.27.96.184:8080/api/tareas/5cbecc46b8d5fc4af5a3bcf0"
+
+    curl -X PUT -H "Content-Type: application/json" -d "{ \"nombre\" : \"reparar goteras\", \"idusuario\" : \"5cbec7c6b8d5fc4af5a3bce7\", \"puntuacion\" : 4, \"contpuntuacion\" : 2, \"descripcion\" : \"no goteará\", \"precio\" : 50, \"img\" : \"assets/img/tareas/foto03.jpg\", \"idCategoria\" : \"3\"}" "http://172.27.96.184:8080/api/tareas/5cbecc46b8d5fc4af5a3bcf1"
+
+    curl -X PUT -H "Content-Type: application/json" -d "{ \"nombre\" : \"peluquería\", \"idusuario\" : \"5cbec7c6b8d5fc4af5a3bce8\", \"puntuacion\" : 4, \"contpuntuacion\" : 3, \"descripcion\" : \"lorem ipsum\", \"precio\" : 650, \"img\" : \"assets/img/tareas/foto04.jpg\", \"idCategoria\" : \"5\"}" "http://172.27.96.184:8080/api/tareas/5cbecc46b8d5fc4af5a3bcf2"
+
+    curl -X PUT -H "Content-Type: application/json" -d "{ \"nombre\" : \"bañar caballos\", \"idusuario\" : \"5cbec7c6b8d5fc4af5a3bce7\", \"puntuacion\" : 4, \"contpuntuacion\" : 2, \"descripcion\" : \"lorem ipsum\", \"precio\" : 450, \"img\" : \"assets/img/tareas/foto05.jpg\", \"idCategoria\" : \"1\"}" "http://172.27.96.184:8080/api/tareas/5cbecc46b8d5fc4af5a3bcf3"
+
+    curl -X PUT -H "Content-Type: application/json" -d "{ \"nombre\" : \"programación\", \"idusuario\" : \"5cbec7c6b8d5fc4af5a3bce8\", \"puntuacion\" : 4, \"contpuntuacion\" : 1, \"descripcion\" : \"programación entre comillas, real\", \"precio\" : 450, \"img\" : \"assets/img/tareas/foto06.jpg\", \"idCategoria\" : \"1\"}" "http://172.27.96.184:8080/api/tareas/5cbecc46b8d5fc4af5a3bcf4"
+
+    curl -X PUT -H "Content-Type: application/json" -d "{ \"nombre\" : \"limipar la cocina\", \"idusuario\" : \"5cbec7c6b8d5fc4af5a3bce7\", \"puntuacion\" : 4, \"contpuntuacion\" : 1, \"descripcion\" : \"lorem ipsum\", \"precio\" : 450, \"img\" : \"assets/img/tareas/foto01.jpg\", \"idCategoria\" : \"1\"}" "http://172.27.96.184:8080/api/tareas/5cbedfc5e7daf212e4c4f123"
 
   	</script>
   
