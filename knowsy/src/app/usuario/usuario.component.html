@@ -31,7 +31,6 @@
             <div>
               <span>Tokens</span>
               <span>{{t.precio}}</span>
-              <span>
                   <span>
                       <span [class]="t.puntuacion>=1? 'fa fa-star checked': 'fa fa-star'"></span>
                       <span [class]="t.puntuacion>=2? 'fa fa-star checked': 'fa fa-star'"></span>
@@ -40,11 +39,9 @@
                       <span [class]="t.puntuacion>=5? 'fa fa-star checked': 'fa fa-star'"></span>
                       <pre>{{t.puntuacion>=1}}</pre>
                   </span> 
-              </span>
+
             </div>
-        
-        
-              <button>ELIMINAR</button>
+              <button (click)="buscar()">ELIMINAR</button>
               <button>EDITAR</button>
           </article>
           
