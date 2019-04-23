@@ -1,32 +1,41 @@
-<h3>Nuevo Servicio</h3>
-<form #trabajoForm="ngForm" (ngSubmit)="guardarTrabajo()">
- <div>
-    <label>Nombre</label>
-    <input type="textarea"[(ngModel)]="nuevoTrabajo.nombre" name="nombre" required>
-  </div>
 
-  <div>
-   <label>Descripción</label>
-   <input type="textarea"[(ngModel)]="nuevoTrabajo.descripcion" name="descripcion" required>
-  </div>
-  <div>
-    <label>Precio</label>
-    <input type="number"[(ngModel)]="nuevoTrabajo.precio" name="precio" required>
-  </div>
-  <div>
-    <label>Categoria</label>
-  <select [(ngModel)]="nuevoTrabajo.idCategoria" name="categoria">
-    <option value=5cbeb89ad0263898b4705b72>Animales</option>
-    <option value=5cbeb89ad0263898b4705b73>Cocina</option>
-    <option value=5cbeb89ad0263898b4705b74>Lampisteria</option>
-    <option value=5cbeb89ad0263898b4705b75>Informática</option>
-    <option value=5cbeb89ad0263898b4705b76>Belleza</option>
-    <option value=5cbeb89ad0263898b4705b77>Deportes</option>
-  </select>
-</div>
-  <div>
-    <button [disabled]="!trabajoForm.valid" (click)="guardarDatos()">Guardar</button>
-  </div>
+<form #trabajoForm="ngForm" (ngSubmit)="guardarTrabajo()">
+    <h3>Nuevo Servicio</h3>
+    
+        <label>Nombre</label>
+    <div>
+        <input type="textarea"[(ngModel)]="nuevoTrabajo.nombre" name="nombre" required>
+    </div>
+
+    
+      <label>Descripción</label>
+    <div>
+      <input type="textarea"[(ngModel)]="nuevoTrabajo.descripcion" name="descripcion" required>
+    </div>
+
+    
+        <label>Precio</label>
+    <div>
+        <input type="number"[(ngModel)]="nuevoTrabajo.precio" name="precio" required>
+    </div>
+
+    
+      <label>Categoria</label>
+    <div>
+      <select [(ngModel)]="nuevoTrabajo.idCategoria" name="categoria">
+        <option value=5cbeb89ad0263898b4705b72>Animales</option>
+        <option value=5cbeb89ad0263898b4705b73>Cocina</option>
+        <option value=5cbeb89ad0263898b4705b74>Lampisteria</option>
+        <option value=5cbeb89ad0263898b4705b75>Informática</option>
+        <option value=5cbeb89ad0263898b4705b76>Belleza</option>
+        <option value=5cbeb89ad0263898b4705b77>Deportes</option>
+      </select>
+    </div>
+
+      <div>
+        <button class="btn btn-primary" [disabled]="!trabajoForm.valid" (click)="guardarDatos()">Guardar</button>
+      </div>
+
 </form>
 
  

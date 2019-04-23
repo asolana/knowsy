@@ -35,7 +35,7 @@ export class ValoracionComponent implements OnInit {
 
   reportar(){
     //Funcionalidad futura
-    console.log(`Reportando a: ${this.trabajo.id}`)
+    console.log(`Reportando a: ${this.trabajo._id}`)
   }
 
   valorar(valoracion){
@@ -45,7 +45,7 @@ export class ValoracionComponent implements OnInit {
   aceptarValoracion(){
     try{
       //Enviar actualizacion de datos
-      this._trabServ.setValoracion(this.trabajo.id, this.puntuacion)
+      this._trabServ.setValoracion(this.trabajo._id, this.puntuacion)
       console.log(`Puntuacion: ${this.trabajo.puntuacion}, Contador: ${this.trabajo.contpuntuacion}`)
       this._router.navigate(['/trabajos'])
     }catch(err){
