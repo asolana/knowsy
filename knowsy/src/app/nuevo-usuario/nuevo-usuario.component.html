@@ -3,18 +3,17 @@
     <h3>Nuevo usuario</h3>
 
     <label>Nombre</label>
-    <input type="text" [(ngModel)]="nuevoUsuario.nombre" name="nombre" required><br />
+    <div><input type="text" [(ngModel)]="nuevoUsuario.nombre" name="nombre" required></div>
 
     <label>Email:</label>
-    <input type="text" [(ngModel)]="nuevoUsuario.email" name="email" required><br />
+    <div><input type="text" [(ngModel)]="nuevoUsuario.email" name="email" required></div>
 
     <label>Contraseña:</label>
-    <input type="password" [(ngModel)]="nuevoUsuario.contrasena" name="contrasena" required><br />
+    <div><input type="password" [(ngModel)]="nuevoUsuario.contrasena" name="contrasena" required></div>
 
     <label>Descripción:</label>
-    <input type="text" [(ngModel)]="nuevoUsuario.descripcion" name="descripcion" required><br />
+    <div><input type="text" [(ngModel)]="nuevoUsuario.descripcion" name="descripcion" required></div>
 
-
-    <button class="btn btn-secondary" [disabled]="!usuarioForm.valid" >Crear usuario</button>
+    <button class="btn btn-primary" [disabled]="!usuarioForm.valid" (click)="gurdar()">Crear usuario</button>
   </form>
 </section>
