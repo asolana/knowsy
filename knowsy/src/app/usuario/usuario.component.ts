@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../modelo/usuario';
 import { ActivatedRoute } from '@angular/router';
 import { UsuarioService } from '../servicio/usuario.service';
-
+import { Trabajo } from '../modelo/Trabajo';
+import { TrabajosService } from '../servicio/trabajos.service';
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
@@ -13,9 +14,13 @@ export class UsuarioComponent implements OnInit {
   // usuario = new Usuario(1,"pepito ","e@e.com",null,'hola',"assets/img/usuario/admin.jpg",true,23000,false);
   usuario: Usuario;
   uid;
+
+  // Trabajos de un usuario
+  trabajos: Trabajo[];
   constructor( 
     private _route: ActivatedRoute,
-    private _servUser: UsuarioService
+    private _servUser: UsuarioService,
+    private _servTrabs: TrabajosService
     ) {}
 
   ngOnInit() {
@@ -27,6 +32,12 @@ export class UsuarioComponent implements OnInit {
       this._servUser.getUsuarioById(this.uid).subscribe(unUsuario => {
         this.usuario = unUsuario;
         console.log('Usuariooooo: '+this.usuario);
+      });
+      // Suscribirse a los trabajos
+      // this._servTrabs.buscarTrabajosUsuario()
+      this._servTrabs.getTrabajosFromAPI()
+      .subscribe(datos =>{
+        this.trabajos = datos;
       });
     });
   }
