@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError, of, BehaviorSubject } from 'rxjs';
 import { Categoria } from '../modelo/categoria';
+import { environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class CategoriasService {
 
   getCategoriasFromAPI(): Observable<Categoria[]> {
     this._categoriasObs = this.$categoriasSub.asObservable();
-    this._http.get<Categoria[]>('http://www.mocky.io/v2/5cb0a38c3100006c00e135d5').subscribe(
+    this._http.get<Categoria[]>(`${environment.API_URL}/categorias`).subscribe(
       data => {
         this._categorias = data;
         this.$categoriasSub.next(this._categorias);
@@ -32,7 +33,7 @@ export class CategoriasService {
   }
 
   buscarCategorias(busqueda: string):void {
-    this._http.get<Categoria[]>('http://www.mocky.io/v2/5cb0a38c3100006c00e135d5').subscribe(
+    this._http.get<Categoria[]>(`${environment.API_URL}/categorias`).subscribe(
       data => {
         this._categorias = data.filter( unT=> unT.nombre.toLowerCase().indexOf(busqueda.toLowerCase())>=0 );
         this.$categoriasSub.next(this._categorias);

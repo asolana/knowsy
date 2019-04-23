@@ -49,6 +49,20 @@ export class TrabajosService {
       }
     );
   }
+
+  filtroCategorias(cid:string):void{
+    this._http.get<Trabajo[]>(`${environment.API_URL}/tareas`).subscribe(
+      data => {
+        this._trabajos = data.filter( unT=> unT.idCategoria.toLowerCase().indexOf(cid.toLowerCase())>=0 );
+        this.$tareasSub.next(this._trabajos);
+      },
+      error => {
+        console.log("Error:", error);
+        return throwError(error);
+      }
+    );
+  }
+
   buscarTrabajosUsuario(idUsuario: string):void {
     this._http.get<Trabajo[]>(`${environment.API_URL}/tareas`).subscribe(
       data => {

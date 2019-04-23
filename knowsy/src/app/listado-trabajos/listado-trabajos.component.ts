@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Trabajo } from '../modelo/trabajo';
 import { TrabajosService } from '../servicio/trabajos.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'listado-trabajos',
@@ -9,18 +11,31 @@ import { TrabajosService } from '../servicio/trabajos.service';
 })
 export class ListadoTrabajosComponent implements OnInit {
 
-  trabajos = [];
+  trabajos = []; 
+  cid;
 
-  constructor(private _traServ: TrabajosService) { }
+  constructor(
+    private _route: ActivatedRoute,
+    private _traServ: TrabajosService) { }
 
   ngOnInit() {
     // this.trabajos = this._traServ.getTrabajos();
     // console.log(this.trabajos);
 
     this._traServ.getTrabajosFromAPI().subscribe((datos) => {
-      //console.log('datos:', listaTareas);
+      console.log('datos:', datos);
       this.trabajos = datos;
     });
+
+    this._route.params.subscribe(parametros => {
+      console.log("Parametros", parametros);
+      if(parametros['cid']){
+        this.cid = parametros['cid'];
+        this._traServ.filtroCategorias(this.cid);
+      }
+    });
+
+    
   }
 
 }

@@ -16,6 +16,9 @@ const routes: Routes = [
   {path: 'nuevoUsuario', component: NuevoUsuarioComponent, pathMatch: 'full'},
   {path: 'valoracion', component: ValoracionComponent, pathMatch: 'full'},
   {path: 'categorias', component: CategoriaComponent, pathMatch: 'full'},
+
+  {path: 'categorias/:cid', component: TrabajosComponent, pathMatch: 'full'},
+  
   {path: 'trabajos/:id/valoracion', component: ValoracionComponent, pathMatch: 'full'},
   {path: '', redirectTo:'trabajos', pathMatch: 'full'},
   { path: '**', component: TrabajosComponent, pathMatch: 'full' },

@@ -1,6 +1,6 @@
 export class Categoria{
     
-    constructor(public id:number,
+    constructor(public _id:string,
         public nombre:string,
         public img:string){
     }

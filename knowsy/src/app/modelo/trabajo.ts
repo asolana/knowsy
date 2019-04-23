@@ -8,7 +8,7 @@ export class Trabajo{
         public descripcion:string,
         public precio:number,
         public img:string,
-        public idCategoria:number){
+        public idCategoria:string){
     }
 
 }

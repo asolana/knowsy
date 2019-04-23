@@ -1,12 +1,13 @@
 <section>
-<figure *ngFor='let c of categorias' class="col-4" [routerLink]="['/categorias',c.id]">
-  <img [src]="c.img" alt="foto">
-  <h4 class="font-weight-bold">{{c.nombre}}</h4>
-</figure>
+
+    <figure *ngFor='let c of categorias' class="col-4" [routerLink]="['/categorias',c._id]">
+      <img [src]="c.img" alt="foto">
+      <h4 class="font-weight-bold">{{c.nombre}}</h4>
+    </figure>
+
 </section>
 
 
 
 
 
-[
