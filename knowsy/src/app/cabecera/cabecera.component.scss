@@ -4,9 +4,20 @@ nav{
 
 li{
     list-style:none;
+    color: #fff;
     padding-right: 1%;
+    margin-right: 7%;
+    display: inline-block;
 }
 
+        a{
+            color: #fff;
+        }
+
+        a:hover{
+            background-color: #7d2181;
+            color: #fff;
+        }
 .logo{
     margin-left:5%; 
     margin-right:5%; 

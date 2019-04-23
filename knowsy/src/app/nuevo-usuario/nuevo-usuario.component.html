@@ -1,0 +1,19 @@
+<section>
+  <form #usuarioForm="ngForm" (ngSubmit)="guardarUsuario()">
+    <h3>Nuevo usuario</h3>
+
+    <label>Nombre</label>
+    <div><input type="text" [(ngModel)]="nuevoUsuario.nombre" name="nombre" required></div>
+
+    <label>Email:</label>
+    <div><input type="text" [(ngModel)]="nuevoUsuario.email" name="email" required></div>
+
+    <label>Contraseña:</label>
+    <div><input type="password" [(ngModel)]="nuevoUsuario.contrasena" name="contrasena" required></div>
+
+    <label>Descripción:</label>
+    <div><input type="text" [(ngModel)]="nuevoUsuario.descripcion" name="descripcion" required></div>
+
+    <button class="btn btn-primary" [disabled]="!usuarioForm.valid" (click)="gurdar()">Crear usuario</button>
+  </form>
+</section>

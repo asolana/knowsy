@@ -1,0 +1,22 @@
+#USUARIOS
+Mostrar todos los usuarios
+curl http://172.27.96.184:8080/api/usuarios/5cbec7c6b8d5fc4af5a3bce7
+Añadir un usuario
+curl -d "{nombre: \"Pepito Grillo\", contrasena: \"1234\", email:\"pepegri@hola.com\", descripcion: \"Me han insertado a través de la API, soy muy moderno se nota que me va la marcha\", img:\"assets/img/usuario/admin.jpg\",estado:true,tokens:20,fiable:true}\" -H "Content-Type: application/json" http://172.27.96.184:8080/api/usuarios
+
+Mostrar Un usuario por ID
+
+Añadir un usuario
+
+
+Eliminar un usuario
+
+#TAREAS
+
+Editar una tarea
+
+curl -X PUT -H "Content-Type: application/json" -d '{ "nombre" : "pasear perro", "idusuario" : "1", "puntuacion" : 4, "contpuntuacion" : 1, "descripcion" : "paseo perros y luego los edito mediante PUT", "precio" : 450, "img" : "assets/img/tareas/foto01.jpg", "idCategoria" : "1"}' "http://172.27.96.184:8080/api/tareas/5cbecc46b8d5fc4af5a3bcef"
+
+
+
+#Categorias

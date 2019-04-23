@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const usuario = require('./usuario');
 //const categoria = require('./categoria');
-//const tarea = require('./tarea');
+const tarea = require('./tarea');
 
 
 // middleware to use for all requests
@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
 
 router.use(usuario);
 //router.use(categoria);
-//router.use(tarea);
+router.use(tarea);
 
 // FUNCTIONS FOR TRAINEDS
 

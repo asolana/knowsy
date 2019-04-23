@@ -74,8 +74,7 @@ export class TrabajosService {
     this._http.get<Trabajo>('http://www.mocky.io/v2/5cb091db3100003e37e13544').subscribe(trabajo => {
       valoracion = trabajo.puntuacion/trabajo.contpuntuacion;
     });
-    return valoracion;
-     
+    return valoracion;  
   }
 
 }

@@ -1,16 +1,23 @@
+<section>
+
+  <article>
+    
+      <h5>Servicio: {{trabajo?.nombre}}</h5>
+      <h5>Puntuación: {{trabajo?.puntuacion}}</h5>
+      <h5>Tokens: {{trabajo?.tokens}} <span>&#9678;</span></h5>
+      <h5>Precio:{{trabajo?.precio}}</h5><br />
+
+      <div>
+          <button class="btn btn-primary" (click)="contratar()"> Contratar</button>
+          <button class="btn btn-primary" [routerLink]="['/trabajos',trabajo.id,'valoracion']">Finalizar</button>
+      </div>
+  </article>  
 
 
-<img [src]="trabajo?.img" alt="foto"/>
+  <figure><img [src]="trabajo?.img" alt="foto"/></figure>
+</section>
 
-<h4>Servicio: {{trabajo?.nombre}}</h4>
-<h4>Puntuación: {{trabajo?.puntuacion}}</h4>
-<h4>Tokens: {{trabajo?.tokens}} <span>&#9678;</span></h4>
-<h4>Precio:{{trabajo?.precio}}</h4>
-
-
-<button (click)="contratar()"> Contratar</button>
-<button [routerLink]="['/trabajos',trabajo.id,'valoracion']">Finalizar</button>
-<div class="alert alert-warning alert-dismissable">
+<aside class="alert alert-warning alert-dismissable">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
   <strong>¡Atento!</strong> Puedes puntuar el trabajo recibido
-</div>
+</aside>
