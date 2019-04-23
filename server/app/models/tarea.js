@@ -19,7 +19,7 @@ const TareaSchema   = new Schema({
         type: Number,
         required: true
     },
-    idcategoria: {
+    idCategoria: {
         type: String,
         required: true
     }

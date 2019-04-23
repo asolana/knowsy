@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Tarea = require('../models/tarea');
+const ObjectId = require('mongoose').Types.ObjectId; 
 
 router.route('/tareas')
 
@@ -22,7 +23,7 @@ router.route('/tareas')
         tarea.contpuntuacion = req.body.contpuntuacion;
         tarea.descripcion = req.body.descripcion;
         tarea.precio = req.body.precio;
-        tarea.idcategoria = req.body.idcategoria;
+        tarea.idCategoria = req.body.idCategoria;
 
         tarea.save().then(tareaGuardada => {
             console.log('tareaGuardada:', tareaGuardada);
@@ -60,25 +61,24 @@ router.route('/tareas/:id')
         tarea.descripcion = req.body.descripcion;
         tarea.precio = req.body.precio;
         tarea.idcategoria = req.body.idcategoria;
+        tarea._id = req.params.id;
+        console.log("objeto creado con el req", tarea);
 
-        Tarea.findById(req.params.id).then(unaTarea => {
+        Tarea.findOne({ _id: new ObjectId(req.params.id) }).then(unaTarea => {
+            console.log('tarea original:', unaTarea);
             if (unaTarea) {
                 unaTarea = tarea;
-            } else { 
-                res.status(409).send({ message: 'This tarea does not exist' });
-                unaTarea = null;
+                console.log('tarea Modificada:', unaTarea);
+                unaTarea.markModified('descripcion');
+                unaTarea.update();                
+                return unaTarea;
             }
-
-            return unaTarea;
-        }).then(unaTarea => {
-            if (unaTarea) unaTarea.update();
-
-            return unaTarea;
         }).then(tareaUpdateada => {
             console.log('tareaUpdated:', tareaUpdateada);
-
             if (tareaUpdateada) {
                 res.json(tareaUpdateada);
+            } else { 
+                res.status(404).send({ message: 'This tarea does not exist' });
             }
         }).catch(err => {
             console.log('Error updating tarea:', err);
@@ -88,7 +88,7 @@ router.route('/tareas/:id')
 
     })
     .delete(function (req, res) {
-        Tarea.findById(req.params.id).then(unaTarea => {
+        Tarea.findById(ObjectId(req.params.id)).then(unaTarea => {
             if(unaTarea) {
                 unaTarea.delete();
             }else {
