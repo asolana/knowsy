@@ -71,7 +71,7 @@ router.route('/tareas/:id')
 
             return unaTarea;
         }).then(unaTarea => {
-            if (unaTarea) unaTarea.put();
+            if (unaTarea) unaTarea.save();
 
             return unaTarea;
         }).then(tareaUpdateada => {
