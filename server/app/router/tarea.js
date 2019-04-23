@@ -61,25 +61,27 @@ router.route('/tareas/:id')
         tarea.precio = req.body.precio;
         tarea.idcategoria = req.body.idcategoria;
 
-        Usuario.findById(req.params.id).then(unaTarea => {
+        Tarea.findById(req.params.id).then(unaTarea => {
             if (unaTarea) {
+                unaTarea = tarea;
+            } else { 
                 res.status(409).send({ message: 'This email already exists' });
                 unaTarea = null;
-            } else { unaTarea = usuario; }
+            }
 
             return unaTarea;
         }).then(unaTarea => {
-            if (unaTarea) unaTarea.save();
+            if (unaTarea) unaTarea.put();
 
             return unaTarea;
-        }).then(usuarioGuardado => {
-            console.log('usuarioGuardado:', usuarioGuardado);
+        }).then(tareaUpdateada => {
+            console.log('tareaUpdated:', tareaUpdateada);
 
-            if (usuarioGuardado) {
-                res.json(usuarioGuardado);
+            if (tareaUpdateada) {
+                res.json(tareaUpdateada);
             }
         }).catch(err => {
-            console.log('Error saving new usuario:', err);
+            console.log('Error updating tarea:', err);
             res.status(500).send({ message: 'Server error' });
         });
 

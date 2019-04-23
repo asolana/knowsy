@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
 
 router.use(usuario);
 //router.use(categoria);
-//router.use(tarea);
+router.use(tarea);
 
 // FUNCTIONS FOR TRAINEDS
 
