@@ -40,7 +40,7 @@ export class TrabajosService {
   buscarTrabajos(busqueda: string):void {
     this._http.get<Trabajo[]>(`${environment.API_URL}/tareas`).subscribe(
       data => {
-        bajos = data.filter( unT=> unT.nombre.toLowerCase().indexOf(busqueda.toLowerCase())>=0 );
+        this._trabajos = data.filter( unT=> unT.nombre.toLowerCase().indexOf(busqueda.toLowerCase())>=0 );
         this.$tareasSub.next(this._trabajos);
       },
       error => {
