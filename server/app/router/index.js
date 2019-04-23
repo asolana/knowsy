@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const usuario = require('./usuario');
-//const categoria = require('./categoria');
+const categoria = require('./categoria');
 const tarea = require('./tarea');
 
 
@@ -17,7 +17,7 @@ router.get('/', function(req, res) {
 });
 
 router.use(usuario);
-//router.use(categoria);
+router.use(categoria);
 router.use(tarea);
 
 // FUNCTIONS FOR TRAINEDS

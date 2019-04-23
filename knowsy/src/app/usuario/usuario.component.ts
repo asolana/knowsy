@@ -10,8 +10,8 @@ import { UsuarioService } from '../servicio/usuario.service';
 })
 export class UsuarioComponent implements OnInit {
 
-  usuario = new Usuario(1,"pepito ","e@e.com",null,'hola',"assets/img/usuario/admin.jpg",true,23000,false);
-
+  // usuario = new Usuario(1,"pepito ","e@e.com",null,'hola',"assets/img/usuario/admin.jpg",true,23000,false);
+  usuario: Usuario;
   constructor( 
     private _route: ActivatedRoute,
     private _servUser: UsuarioService
@@ -23,17 +23,11 @@ export class UsuarioComponent implements OnInit {
       console.log('parametros:', parametros);
       const uid = parametros['id'];
       // suscribirse al usuario
-      this._servUser.getUsuarioById().subscribe((unUsuario) => {
+      this._servUser.getUsuarioById(uid).subscribe(unUsuario => {
         this.usuario = unUsuario;
-        console.log(this.usuario);
+        console.log('Usuariooooo: '+this.usuario);
       });
     });
-
-
-    // this._tarServ.getUsuario( ID PASADA POR PARAMETRO).subscribe((unUsuario) => {
-    //   //console.log('datos:', listaTareas);
-    //   this.tareas = listaTareas;
-    // });
   }
 
 }
