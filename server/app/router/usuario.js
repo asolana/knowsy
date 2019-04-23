@@ -67,33 +67,24 @@ router.route('/usuarios')
         let usuario = new Usuario();
 
         usuario.nombre = req.body.nombre;
-        usuario.contrasena = generatePass();
+        usuario.contrasena = req.body.contrasena;
         usuario.email = req.body.email;
         usuario.descripcion = req.body.descripcion;
         usuario.img = req.body.img;
         usuario.estado = req.body.estado;
         usuario.tokens = req.body.tokens;
         usuario.fiable = req.body.fiable;
-        
-        Usuario.findOne({ email: usuario.email }).then(unUsuario => {
+        usuario._id = req.params.id;
+
+        Usuario.findByIdAndUpdate({ _id: req.params.id}, usuario).then(unUsuario => {
             if (unUsuario) {
-                res.status(409).send({ message: 'This email already exists' });
-                unUsuario = null;
-            } else { unUsuario = usuario; }
-
-            return unUsuario;
-        }).then(unUsuario => {
-            if (unUsuario) unUsuario.save();
-
-            return unUsuario;
-        }).then(usuarioGuardado => {
-            console.log('usuarioGuardado:', usuarioGuardado);
-
-            if (usuarioGuardado) {
-                res.json(usuarioGuardado);
+                console.log("Tarea editada:", unUsuario);
+                res.json(unUsuario);
+            } else {
+                res.status(404).send({ message: 'This tarea does not exist' });
             }
         }).catch(err => {
-            console.log('Error saving new usuario:', err);
+            console.log('Error updating tarea:', err);
             res.status(500).send({ message: 'Server error' });
         });
 
