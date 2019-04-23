@@ -62,22 +62,12 @@ router.route('/tareas/:id')
         tarea.precio = req.body.precio;
         tarea.idcategoria = req.body.idcategoria;
         tarea._id = req.params.id;
-        console.log("objeto creado con el req", tarea);
 
-        Tarea.findOne({ _id: new ObjectId(req.params.id) }).then(unaTarea => {
-            console.log('tarea original:', unaTarea);
+        Tarea.findByIdAndUpdate({ _id: req.params.id}, tarea).then(unaTarea => {
             if (unaTarea) {
-                unaTarea = tarea;
-                console.log('tarea Modificada:', unaTarea);
-                unaTarea.markModified('descripcion');
-                unaTarea.update();                
-                return unaTarea;
-            }
-        }).then(tareaUpdateada => {
-            console.log('tareaUpdated:', tareaUpdateada);
-            if (tareaUpdateada) {
-                res.json(tareaUpdateada);
-            } else { 
+                console.log("Tarea editada:", unaTarea);
+                res.json(unaTarea);
+            } else {
                 res.status(404).send({ message: 'This tarea does not exist' });
             }
         }).catch(err => {
