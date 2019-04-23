@@ -1,6 +1,6 @@
 export class Trabajo{
     
-    constructor(public id:number,
+    constructor(public _id:number,
         public nombre:string,
         public idusuario:number,
         public puntuacion:number,

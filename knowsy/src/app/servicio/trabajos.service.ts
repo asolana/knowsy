@@ -55,7 +55,7 @@ export class TrabajosService {
 
   //Funcion que a la cual se le pasa un id y devuelve el trabajo con ese id
   getTrabajoById(id): Observable<Trabajo> {
-    return this._http.get<Trabajo>(`${environment.API_URL}/tareas:id`);
+    return this._http.get<Trabajo>(`${environment.API_URL}/tareas/${id}`);
   }
 
   guardarTrabajo(nuevoTrabajo:Trabajo){

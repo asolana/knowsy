@@ -1,5 +1,5 @@
 <section class="row" >
-  <figure *ngFor='let t of trabajos' class="col-4" [routerLink]="['/trabajos',t.id]">
+  <figure *ngFor='let t of trabajos' class="col-4" [routerLink]="['/trabajos',t._id]">
     <img [src]="t.img" alt="foto"/>
     <h4 class="font-weight-bold">{{t.nombre}}</h4>
     <span>Puntuación:  {{t.puntuacion}}  &#11088;</span>

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../modelo/usuario';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 import { environment} from '../../environments/environment';
 
 @Injectable({
@@ -22,6 +23,13 @@ export class UsuarioService {
   }
 
   guardarUsuario(nuevoUsuario:Usuario){
-    this._http.post<Usuario>(`${environment.API_URL}/usuarios`, nuevoUsuario);
+    console.log(nuevoUsuario);
+    return this._http.post<Usuario>(`${environment.API_URL}/usuarios`, nuevoUsuario).pipe(
+      tap( usuario => console.log(usuario)),
+      catchError( error =>{
+        console.log(error);
+        return throwError(error);}
+        )
+    );
   }
 }
