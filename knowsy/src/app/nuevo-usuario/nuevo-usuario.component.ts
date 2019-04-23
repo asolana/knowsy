@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../modelo/usuario';
+import { UsuarioService } from '../servicio/usuario.service';
 
 @Component({
   selector: 'app-nuevo-usuario',
@@ -10,14 +11,14 @@ export class NuevoUsuarioComponent implements OnInit {
 
   nuevoUsuario = new Usuario(0, null,null,null,null,null,null,0,null);
 
-  constructor() { }
+  constructor(private _usuarioServ: UsuarioService) { }
 
   ngOnInit() {
   }
 
   guardarUsuario() {
-    // this._trabajoServ.buscarTrabajos(this.nuevoUsuario);
-    }
+      this._usuarioServ.guardarUsuario(this.nuevoUsuario);
+  }
 
 
 }

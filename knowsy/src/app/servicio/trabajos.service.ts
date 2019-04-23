@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError, of, BehaviorSubject } from 'rxjs';
 import { Trabajo } from '../modelo/trabajo';
-import { tap, catchError } from 'rxjs/operators';
+import { environment} from '../../environments/environment';
 
 
 
@@ -20,9 +20,9 @@ export class TrabajosService {
   constructor(private _http: HttpClient) { }
 
   getTrabajosFromAPI(): Observable<Trabajo[]> {
-
+    console.log(`${environment.API_URL}/tareas`)
     this._trabajosObs = this.$tareasSub.asObservable();
-    this._http.get<Trabajo[]>('http://www.mocky.io/v2/5cb03d4a3100005500e132a5').subscribe(
+    this._http.get<Trabajo[]>(`${environment.API_URL}/tareas`).subscribe(
       data => {
         this._trabajos = data;
         this.$tareasSub.next(this._trabajos);
@@ -38,7 +38,7 @@ export class TrabajosService {
   }
 
   buscarTrabajos(busqueda: string):void {
-    this._http.get<Trabajo[]>('http://www.mocky.io/v2/5cb0919e3100006c00e13542').subscribe(
+    this._http.get<Trabajo[]>(`${environment.API_URL}/tareas`).subscribe(
       data => {
         this._trabajos = data.filter( unT=> unT.nombre.toLowerCase().indexOf(busqueda.toLowerCase())>=0 );
         this.$tareasSub.next(this._trabajos);
@@ -55,23 +55,27 @@ export class TrabajosService {
 
   //Funcion que a la cual se le pasa un id y devuelve el trabajo con ese id
   getTrabajoById(id): Observable<Trabajo> {
-    return this._http.get<Trabajo>('http://www.mocky.io/v2/5cb091db3100003e37e13544');
+    return this._http.get<Trabajo>(`${environment.API_URL}/tareas:id`);
+  }
+
+  guardarTrabajo(nuevoTrabajo:Trabajo){
+    this._http.post<Trabajo>(`${environment.API_URL}/tareas`, nuevoTrabajo);
   }
 
   //Funcion que recoje la valoracion de un trabajo y actualiza
   setValoracion(id,valoracion){
     var trab : Trabajo;
-    this._http.get<Trabajo>('http://www.mocky.io/v2/5cb091db3100003e37e13544').subscribe(trabajo => {
+    this._http.get<Trabajo>(`${environment.API_URL}/tareas:id`).subscribe(trabajo => {
       trab = trabajo;
       trab.contpuntuacion ++;
       trab.contpuntuacion == 0 ? trab.puntuacion = valoracion : trab.puntuacion += valoracion;
     });
-    this._http.post<Trabajo>('http://www.mocky.io/v2/5cb091db3100003e37e13544',trab);
+    this._http.post<Trabajo>(`${environment.API_URL}/tareas:id`,trab);
   }
 
   getValoracion(id):Number{
     let valoracion = 0;
-    this._http.get<Trabajo>('http://www.mocky.io/v2/5cb091db3100003e37e13544').subscribe(trabajo => {
+    this._http.get<Trabajo>(`${environment.API_URL}/tareas:id`).subscribe(trabajo => {
       valoracion = trabajo.puntuacion/trabajo.contpuntuacion;
     });
     return valoracion;  

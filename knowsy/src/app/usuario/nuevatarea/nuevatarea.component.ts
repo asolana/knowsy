@@ -18,12 +18,9 @@ export class NuevatareaComponent implements OnInit {
    
 
 
-  ngOnInit() {
- 
-   
-
-   } 
+  ngOnInit() {} 
+  
    guardarDatos(){
-    //  this._tarServ.guardarTarea(this.nuevoTrabajo);
+    this._tarServ.guardarTrabajo(this.nuevoTrabajo);
   }
 }

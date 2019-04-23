@@ -23,7 +23,7 @@ export class UsuarioComponent implements OnInit {
       console.log('parametros:', parametros);
       const uid = parametros['id'];
       // suscribirse al usuario
-      this._servUser.getUsuarioById(uid).subscribe((unUsuario) => {
+      this._servUser.getUsuarioById().subscribe((unUsuario) => {
         this.usuario = unUsuario;
         console.log(this.usuario);
       });
