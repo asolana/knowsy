@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TrabajosService } from 'src/app/servicio/trabajos.service';
-import { UsuarioService } from 'src/app/servicio/usuario.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Trabajo } from 'src/app/modelo/trabajo';
@@ -16,8 +15,7 @@ export class ValoracionComponent implements OnInit {
   puntuacion = 0;
    
   constructor(
-    private _trabServ:TrabajosService, 
-    private _userServ:UsuarioService,
+    private _trabServ:TrabajosService,
     private _route:ActivatedRoute,
     private _router:Router) { }
 
