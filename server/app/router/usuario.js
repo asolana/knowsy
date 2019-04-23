@@ -89,6 +89,16 @@ router.route('/usuarios')
         });
 
 
+    })
+    .delete(function (req, res) {
+        Usuario.findByIdAndRemove({ _id: req.params.id}, function(err, tarea){
+            if(err){
+                console.log(`Error: ${err}`)
+                res.send(err);
+            }
+            console.log(`Usuario Eliminado: ${tarea}`)
+            
+        });
     });
 
 
