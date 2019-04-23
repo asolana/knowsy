@@ -32,13 +32,16 @@ export class UsuarioComponent implements OnInit {
         this.usuario = unUsuario;
         console.log('Usuariooooo: '+this.usuario);
       });
-      // Suscribirse a los trabajos
-      // this._servTrabs.buscarTrabajosUsuario()
-      this._servTrabs.getTrabajosFromAPI()
-      .subscribe(datos =>{
-        this.trabajos = datos;
-      });
+      
     });
+
+    // Suscribirse a los trabajos
+    
+    this._servTrabs.getTrabajosFromAPI().subscribe((datos) => {
+      console.log('datos:', datos);
+      this.trabajos = datos;
+    });
+    this._servTrabs.buscarTrabajosUsuario(this.uid);
   }
 
 }

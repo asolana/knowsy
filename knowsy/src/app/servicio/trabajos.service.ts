@@ -49,7 +49,7 @@ export class TrabajosService {
       }
     );
   }
-  buscarTrabajosUsuario(idUsuario: string):void {
+  buscarTrabajosUsuario(idUsuario: string): void{
     this._http.get<Trabajo[]>(`${environment.API_URL}/tareas`).subscribe(
       data => {
         this._trabajos = data.filter( unT=> unT.idusuario.indexOf(idUsuario.toLowerCase())>=0 );
