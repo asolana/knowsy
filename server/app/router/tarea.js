@@ -65,13 +65,13 @@ router.route('/tareas/:id')
             if (unaTarea) {
                 unaTarea = tarea;
             } else { 
-                res.status(409).send({ message: 'This email already exists' });
+                res.status(409).send({ message: 'This tarea does not exist' });
                 unaTarea = null;
             }
 
             return unaTarea;
         }).then(unaTarea => {
-            if (unaTarea) unaTarea.save();
+            if (unaTarea) unaTarea.update();
 
             return unaTarea;
         }).then(tareaUpdateada => {
@@ -86,33 +86,26 @@ router.route('/tareas/:id')
         });
 
 
+    })
+    .delete(function (req, res) {
+        Tarea.findById(req.params.id).then(unaTarea => {
+            if(unaTarea) {
+                unaTarea.delete();
+            }else {
+                res.status(409).send({ message: 'This tarea does not exist' });
+                unaTarea = null;
+            }
+        }).then(tareaDeleted => {
+            console.log('tarea Deleted:', tareaDeleted);
+
+            if (tareaDeleted) {
+                res.json(tareaDeleted);
+            }
+        }).catch(err => {
+            console.log('Error eliminando tarea:', err);
+            res.status(500).send({ message: 'Server error' });
+        });
     });
 
-
-
-
-
-
-
-
-
-
-function generatePass() {
-    let password = "";
-    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    let possibleletters = "BCDFGHJKLMNPQRSTVWXZbcdfghjklmnpqrstvwxz";
-    let possiblevowels = "AEIOUYaeiouy";
-    let possiblenumbers = "1234567890";
-
-    for (let i = 0; i < 6; i++) {
-        if ((i + 1) % 2) password += possibleletters.charAt(Math.floor(Math.random() * possibleletters.length));
-        else password += possiblevowels.charAt(Math.floor(Math.random() * possiblevowels.length));
-    }
-
-    password += possiblenumbers.charAt(Math.floor(Math.random() * possiblenumbers.length));
-    password += possiblenumbers.charAt(Math.floor(Math.random() * possiblenumbers.length));
-
-    return password;
-}
 
 module.exports = router;
