@@ -18,8 +18,8 @@ export class UsuarioService {
     return this._http.get<Usuario[]>(`${environment.API_URL}/usuarios`);
   }
 
-  getUsuarioById(): Observable<Usuario> {
-    return this._http.get<Usuario>(`${environment.API_URL}/usuarios:id`);
+  getUsuarioById(id): Observable<Usuario> {
+    return this._http.get<Usuario>(`${environment.API_URL}/usuarios/${id}`);
   }
 
   guardarUsuario(nuevoUsuario:Usuario){
