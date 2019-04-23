@@ -15,14 +15,9 @@ export class NuevoUsuarioComponent implements OnInit {
   ngOnInit() {
   }
 
-  // guardarUsuario() {
-  //   console.log('Nuevo:', this.nuevoUsuario);
-  // //   this._tarServ.addTareaToAPI(this.nuevoUsuario).subscribe(unUsuario=>{
-  // //     console.log('Respuesta post:',unUsuario);
-  // //     //redirigir a lista de tareas
-  // //     this._router.navigate(['/tareas']);
-  // //   });
-  // // }
+  guardarUsuario() {
+    // this._trabajoServ.buscarTrabajos(this.nuevoUsuario);
+    }
 
 
 }
