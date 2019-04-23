@@ -22,14 +22,7 @@ export class UsuarioService {
     return this._http.get<Usuario>(`${environment.API_URL}/usuarios/${id}`);
   }
 
-  guardarUsuario(nuevoUsuario:Usuario){
-    console.log(nuevoUsuario);
-    return this._http.post<Usuario>(`${environment.API_URL}/usuarios`, nuevoUsuario).pipe(
-      tap( usuario => console.log(usuario)),
-      catchError( error =>{
-        console.log(error);
-        return throwError(error);}
-        )
-    );
+  guardarUsuario(nuevoUsuario:Usuario):Observable<Usuario>{
+    return this._http.post<Usuario>(`${environment.API_URL}/usuarios`, nuevoUsuario);
   }
 }

@@ -49,6 +49,18 @@ export class TrabajosService {
       }
     );
   }
+  buscarTrabajosUsuario(idUsuario: string):void {
+    this._http.get<Trabajo[]>(`${environment.API_URL}/tareas`).subscribe(
+      data => {
+        this._trabajos = data.filter( unT=> unT.idusuario.indexOf(idUsuario.toLowerCase())>=0 );
+        this.$tareasSub.next(this._trabajos);
+      },
+      error => {
+        console.log("Error:", error);
+        return throwError(error);
+      }
+    );
+  }
 
   //Funcion que devuelve un array de trabajos
   getTrabajos(): Trabajo[] { return this._trabajos; }
@@ -58,8 +70,8 @@ export class TrabajosService {
     return this._http.get<Trabajo>(`${environment.API_URL}/tareas/${id}`);
   }
 
-  guardarTrabajo(nuevoTrabajo:Trabajo){
-    this._http.post<Trabajo>(`${environment.API_URL}/tareas`, nuevoTrabajo);
+  guardarTrabajo(nuevoTrabajo:Trabajo):Observable<Trabajo>{
+    return this._http.post<Trabajo>(`${environment.API_URL}/tareas`, nuevoTrabajo);
   }
 
   //Funcion que recoje la valoracion de un trabajo y actualiza

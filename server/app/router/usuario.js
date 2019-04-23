@@ -24,7 +24,6 @@ router.route('/usuarios')
         usuario.estado = req.body.estado;
         usuario.tokens = req.body.tokens;
         usuario.fiable = req.body.fiable;
-
         Usuario.findOne({ email: usuario.email }).then(unUsuario => {
             if (unUsuario) {
                 res.status(409).send({ message: 'This email already exists' });
