@@ -7,19 +7,16 @@
         <input type="textarea"[(ngModel)]="nuevoTrabajo.nombre" name="nombre" required>
     </div>
 
-    
       <label>Descripción</label>
     <div>
       <input type="textarea"[(ngModel)]="nuevoTrabajo.descripcion" name="descripcion" required>
     </div>
 
-    
         <label>Precio</label>
     <div>
         <input type="number"[(ngModel)]="nuevoTrabajo.precio" name="precio" required>
     </div>
-
-    
+ 
       <label>Categoria</label>
     <div>
       <select [(ngModel)]="nuevoTrabajo.idCategoria" name="categoria">
@@ -32,9 +29,21 @@
       </select>
     </div>
 
-      <div>
-        <button class="btn btn-primary" [disabled]="!trabajoForm.valid" (click)="guardarDatos()">Guardar</button>
-      </div>
+    <label>Imagen</label>
+    <div>
+      <select [(ngModel)]="nuevoTrabajo.img" name="img" required>
+        <option value="assets/img/tareas/foto01.jpg">Animales</option>
+        <option value="assets/img/tareas/foto02.jpg">Cocina</option>
+        <option value="assets/img/tareas/foto03.jpg">Lampisteria</option>
+        <option value="assets/img/tareas/foto06.jpg">Informática</option>
+        <option value="assets/img/tareas/foto04.jpg">Belleza</option>
+        <option value="assets/img/tareas/foto07.jpg">Deportes</option>
+      </select>
+    </div>
+
+    <div>
+      <button class="btn btn-primary" [disabled]="!trabajoForm.valid" (click)="guardarDatos()">Guardar</button>
+    </div>
 
 </form>
 
