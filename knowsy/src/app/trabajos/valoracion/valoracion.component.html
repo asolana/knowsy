@@ -1,10 +1,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+
+<aside>
+    <figure>
+            <img [src]="trabajo?.img" alt="foto" />
+    </figure>
+</aside>
+
 <section>
     <h3>Valoración</h3>
-    <img [src]="trabajo?.img" alt="foto" />
-    <p>{{trabajo?.nombre}}</p>
-    <p>Puntuación: {{user?.puntuacion}}</p>
+    
+    <h5>{{trabajo?.nombre}}</h5>
+    <p>Puntuación {{user?.puntuacion}}</p>
     <p>Comentarios</p>
     <p>Valoración</p>
     <span>
@@ -13,8 +21,10 @@
         <span (click)="valorar(3)" [class]="puntuacion>=3? 'fa fa-star checked': 'fa fa-star'"></span>
         <span (click)="valorar(4)" [class]="puntuacion>=4? 'fa fa-star checked': 'fa fa-star'"></span>
         <span (click)="valorar(5)" [class]="puntuacion>=5? 'fa fa-star checked': 'fa fa-star'"></span>
-    </span>
-
-    <button (click)="reportar()">Reportar</button>
-    <button (click)="aceptarValoracion()">Aceptar</button>
+    </span>   
+ 
+    <div>
+        <button class="btn btn-primary" (click)="reportar()">Reportar</button>
+        <button class="btn btn-primary" (click)="aceptarValoracion()">Aceptar</button>
+    </div>
 </section>
