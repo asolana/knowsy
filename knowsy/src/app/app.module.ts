@@ -14,6 +14,7 @@ import { BuscadorComponent } from './buscador/buscador.component';
 import { ValoracionComponent } from './trabajos/valoracion/valoracion.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { NuevoUsuarioComponent } from './nuevo-usuario/nuevo-usuario.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CategoriaComponent } from './categoria/categoria.component';
     TrabajodetalleComponent,
     ValoracionComponent,
     UsuarioComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    NuevoUsuarioComponent
   ],
   imports: [
     BrowserModule,

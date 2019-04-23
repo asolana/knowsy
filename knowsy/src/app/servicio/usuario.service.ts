@@ -20,6 +20,13 @@ export class UsuarioService {
     return this._http.get<Usuario>('http://www.mocky.io/v2/5cb07835310000850be13499');
   }
 
+
+  // addUsuarioToAPI(nuevoUsuario: Usuario): Observable<Usuario> {
+  //   return this._http.post<Usuario>('http://www.mocky.io/v2/5cadf6e62f00005f1d3a99e1', nuevoUsuario)
+  // }
+
+
+
   // getUsuarioById(id){
   //   this.getUsuariosFromAPI().subscribe((usuarios) => { this._usuarios = usuarios});
   //   return this._usuarios.find(function (unUser) {

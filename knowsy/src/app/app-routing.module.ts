@@ -5,11 +5,14 @@ import { TrabajodetalleComponent } from './trabajos/trabajodetalle/trabajodetall
 import { UsuarioComponent } from './usuario/usuario.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ValoracionComponent } from './trabajos/valoracion/valoracion.component';
+import { NuevoUsuarioComponent } from './nuevo-usuario/nuevo-usuario.component';
 
 const routes: Routes = [
   {path: 'trabajos', component: TrabajosComponent, pathMatch: 'full'},
   {path: 'trabajos/:id', component: TrabajodetalleComponent, pathMatch: 'full'},
   {path: 'usuario/:id', component: UsuarioComponent, pathMatch: 'full'},
+
+  {path: 'nuevoUsuario', component: NuevoUsuarioComponent, pathMatch: 'full'},
  
   {path: 'valoracion', component: ValoracionComponent, pathMatch: 'full'},
 

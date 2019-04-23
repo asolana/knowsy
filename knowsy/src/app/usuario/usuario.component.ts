@@ -10,7 +10,7 @@ import { UsuarioService } from '../servicio/usuario.service';
 })
 export class UsuarioComponent implements OnInit {
 
-  usuario = new Usuario(1,"pepito ","hola","assets/img/usuario/admin.jpg",true,23000,false);
+  usuario = new Usuario(1,"pepito ","e@e.com",null,'hola',"assets/img/usuario/admin.jpg",true,23000,false);
 
   constructor( 
     private _route: ActivatedRoute,
