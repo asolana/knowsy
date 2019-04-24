@@ -18,3 +18,21 @@ input{
 button{
     margin:2% 0% 4% 0%;
 }
+
+//Alert
+.alert{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.close{
+    margin: auto;
+}
+
+.visible{
+    display: inline-block;
+
+}
+.hidden{
+    display: none;
+}

@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class NuevoUsuarioComponent implements OnInit {
 
-  nuevoUsuario = new Usuario(0,"","","","","",true,0,true);
+  nuevoUsuario = new Usuario(0,"","","","","",null,0,null);
+  isregistrado: boolean = false;
 
   constructor(private _usuarioServ: UsuarioService, private _router: Router) { }
 
@@ -18,9 +19,11 @@ export class NuevoUsuarioComponent implements OnInit {
   }
 
   guardarUsuario() {
-      this._usuarioServ.guardarUsuario(this.nuevoUsuario).subscribe(data=>{
-        this._router.navigate(['/trabajos']);
-      });
+    console.log("funciona!")
+    this._usuarioServ.guardarUsuario(this.nuevoUsuario).subscribe(data=>{});
+  }
+  volver(){
+    this._router.navigate(['/trabajos']);
   }
 
 
