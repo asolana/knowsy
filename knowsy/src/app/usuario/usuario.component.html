@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<section class="container">
+<section class="container-fluid m-0">
   <div class="row">
       <figure class="col-sm">
           <h2>{{usuario?.nombre}}</h2>
@@ -23,9 +23,9 @@
         </p>    
         <button class="btn btn-primary" [routerLink]="['/usuario', uid,'nuevatarea']">Nuevo servicio</button>
       </article>
-      <aside class="serv col-sm">
+      <aside class="serv col-sm-5">
           <h3>Que trabajos ofrezco:</h3>
-          <article *ngFor='let t of trabajos'>
+          <article class="trabajo" *ngFor='let t of trabajos'>
             <div>{{t.nombre}}</div>
             <div>{{t.descripcion}}</div>
             <div>
@@ -37,7 +37,6 @@
                       <span [class]="t.puntuacion>=3? 'fa fa-star checked': 'fa fa-star'"></span>
                       <span [class]="t.puntuacion>=4? 'fa fa-star checked': 'fa fa-star'"></span>
                       <span [class]="t.puntuacion>=5? 'fa fa-star checked': 'fa fa-star'"></span>
-                      <pre>{{t.puntuacion>=1}}</pre>
                   </span> 
 
             </div>
