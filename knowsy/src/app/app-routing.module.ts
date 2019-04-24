@@ -10,7 +10,7 @@ import { NuevoUsuarioComponent } from './nuevo-usuario/nuevo-usuario.component';
 
 const routes: Routes = [
   {path: 'trabajos', component: TrabajosComponent, pathMatch: 'full'},
-  {path:'trabajos/nuevatarea/:id', component:NuevatareaComponent, pathMatch: 'full'},
+  {path: 'usuario/:id/nuevatarea', component:NuevatareaComponent, pathMatch: 'full'},
   {path: 'trabajos/:id', component: TrabajodetalleComponent, pathMatch: 'full'},
   {path: 'usuario/:id', component: UsuarioComponent, pathMatch: 'full'},
   {path: 'nuevoUsuario', component: NuevoUsuarioComponent, pathMatch: 'full'},
