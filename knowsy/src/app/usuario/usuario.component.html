@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <section class="container-fluid m-0">
   <div class="row">
-      <figure class="col-sm">
+      <figure class="col-sm-2">
           <h2>{{usuario?.nombre}}</h2>
           <img [src]="usuario?.img" alt="foto"/>
       </figure>
-      <article class="col-lg-5">
+      <article class="col-lg-4">
         <p>
           <span>Disponibilidad: </span>
           <span>{{usuario?.estado?"Disponible":"Ocupado"}}</span>
@@ -41,7 +41,7 @@
 
             </div>
               <button class="btn btn-secondary" (click)="eliminar(t._id)">ELIMINAR</button>
-              <button class="btn btn-secondary">EDITAR</button>
+              <button class="btn btn-secondary" [routerLink]="['/usuario', uid,'nuevatarea', t._id]"> EDITAR</button>
           </article>
           
         
