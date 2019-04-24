@@ -2,7 +2,7 @@
   <figure *ngFor='let t of trabajos' class="col-4" [routerLink]="['/trabajos',t._id]">
     <img [src]="t.img" alt="foto"/>
     <h4 class="font-weight-bold">{{t.nombre}}</h4>
-    <span>Puntuación:  {{t.puntuacion}}  &#11088;</span>
+    <span>Puntuación:  {{t.puntuacion/t.contpuntuacion}}  &#11088;</span>
     <span>Tokens:  {{t.precio}}  &#9678;</span>
     
     <!--cuando sepamos como relacionar datos ya lo haremos bien -->

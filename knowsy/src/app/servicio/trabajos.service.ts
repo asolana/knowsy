@@ -96,8 +96,10 @@ export class TrabajosService {
       trab = trabajo;
       trab.contpuntuacion ++;
       trab.contpuntuacion == 0 ? trab.puntuacion = valoracion : trab.puntuacion += valoracion;
+      this._http.put<Trabajo>(`${environment.API_URL}/tareas/${id}`,trab).subscribe(datos => {
+        console.log(`Valoracion ${trab.puntuacion}, desde servidor: ${datos.puntuacion}`)
+      });
     });
-    this._http.post<Trabajo>(`${environment.API_URL}/tareas/${id}`,trab);
   }
 
   getValoracion(id):Number{
