@@ -1,5 +1,5 @@
 // DATABASE SETUP
-let mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL || 'mongodb://18.194.27.82:27017/knowsy'; // set mongo url
+let mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL || 'mongodb://localhost:27017/knowsy'; // set mongo url
 // let mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL || 'mongodb://172.27.96.184:27017/knowsy';
 let  mongoURLLabel = "";
 
