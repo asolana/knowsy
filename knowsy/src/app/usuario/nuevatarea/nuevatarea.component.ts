@@ -12,16 +12,20 @@ import { Trabajo } from 'src/app/modelo/trabajo';
 })
 export class NuevatareaComponent implements OnInit {
   nuevoTrabajo= new Trabajo(0,"","",0,0,"",0,"","");
+  isCreado: boolean = false;
 
   constructor(private _tarServ:TrabajosService, private _route: ActivatedRoute, private _router: Router)  { }
   ngOnInit() {
+    
     this._route.params.subscribe(parametros => {
       this.nuevoTrabajo.idusuario = parametros['id'];});
   } 
   
-   guardarDatos(){
-    this._tarServ.guardarTrabajo(this.nuevoTrabajo).subscribe(data=>{
-      this._router.navigate(['/trabajos']);
-    });
+  guardarDatos(){
+    this._tarServ.guardarTrabajo(this.nuevoTrabajo).subscribe(data=>{});
   }
+  volver(){
+    this._router.navigate(['/usuario/', this.nuevoTrabajo.idusuario]);
+  }
+  
 }

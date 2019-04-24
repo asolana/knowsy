@@ -1,6 +1,6 @@
 
-<form #trabajoForm="ngForm">
-    <h3>Nuevo Servicio</h3>
+<form #trabajoForm="ngForm" (ngSubmit)="guardarDatos()">
+    <h3>Nuevo Trabajo</h3>
     
         <label>Nombre</label>
     <div>
@@ -42,9 +42,14 @@
     </div>
 
     <div>
-      <button class="btn btn-primary" [disabled]="!trabajoForm.valid" (click)="guardarDatos()">Guardar</button>
+      <button class="btn btn-primary" [disabled]="!trabajoForm.valid" (click)="isCreado = !isCreado">Guardar</button>
     </div>
 
 </form>
-
- 
+<div class="alert alert-success alert-dismissible fade show" role="alert" 
+[ngClass]="isCreado ? 'visible' : 'hidden'">
+  <h5 class="alert-heading">Trabajo Guardado!!</h5>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="volver()">
+    <span aria-hidden="true">X</span>
+  </button>
+</div>

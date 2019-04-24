@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class NuevoUsuarioComponent implements OnInit {
 
   nuevoUsuario = new Usuario(0,"","","","","",null,0,null);
-  isregistrado: boolean = false;
+  isRegistrado: boolean = false;
 
   constructor(private _usuarioServ: UsuarioService, private _router: Router) { }
 
@@ -19,7 +19,6 @@ export class NuevoUsuarioComponent implements OnInit {
   }
 
   guardarUsuario() {
-    console.log("funciona!")
     this._usuarioServ.guardarUsuario(this.nuevoUsuario).subscribe(data=>{});
   }
   volver(){
