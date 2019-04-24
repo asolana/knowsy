@@ -110,7 +110,8 @@ export class TrabajosService {
 
   //Funcion para eliminar
   deleteTrabajo(id): Observable<Trabajo>{
-    return this._http.delete<Trabajo>(`${environment.API_URL}/tareas/${id}`);
+    console.log("Servicio de eliminar tarea");
+     return this._http.delete<Trabajo>(`${environment.API_URL}/tareas/${id}`);
   }
 
   //Funcion para editar

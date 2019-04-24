@@ -94,6 +94,8 @@ router.route('/usuarios')
             if(err){
                 console.log(`Error: ${err}`)
                 res.send(err);
+            }else{
+                res.json(tarea);
             }
             console.log(`Usuario Eliminado: ${tarea}`)
             

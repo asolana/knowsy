@@ -44,4 +44,17 @@ export class UsuarioComponent implements OnInit {
     this._servTrabs.buscarTrabajosUsuario(this.uid);
   }
 
+  eliminar(id){
+    
+    this._servTrabs.deleteTrabajo(id).subscribe(datos =>{
+      console.log("eliminando:", datos);
+      this._servTrabs.getTrabajosFromAPI().subscribe((datos) => {
+        console.log('datos:', datos);
+        this.trabajos = datos;
+      });
+      this._servTrabs.buscarTrabajosUsuario(this.uid);
+      
+    });
+  }
+
 }

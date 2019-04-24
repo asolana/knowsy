@@ -78,10 +78,13 @@ router.route('/tareas/:id')
 
     })
     .delete(function (req, res) {
+        console.log("Eliminando:",req.params.id);
         Tarea.findByIdAndRemove({ _id: req.params.id}, function(err, tarea){
             if(err){
                 console.log(`Error: ${err}`)
                 res.send(err);
+            }else{
+                res.json(tarea);
             }
             console.log(`Tarea Eliminada: ${tarea}`)
             
