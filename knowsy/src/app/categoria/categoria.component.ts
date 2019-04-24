@@ -15,7 +15,6 @@ export class CategoriaComponent implements OnInit {
  
   this._catServ.getCategoriasFromAPI().subscribe((datos) =>{
     this.categorias= datos;
-   console.log(this.categorias);
 
   });
 }

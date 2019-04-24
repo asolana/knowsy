@@ -1,8 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <section class="row m-0" >
-  <figure *ngFor='let t of trabajos' class="col-4" [routerLink]="['/trabajos',t._id]">
+  <figure *ngFor='let t of trabajos' class="col-6 col-sm-4" [routerLink]="['/trabajos',t._id]">
     <img [src]="t.img" alt="foto"/>
     <h4 class="font-weight-bold">{{t.nombre}}</h4>
-    <span>Puntuación:  {{t.puntuacion/t.contpuntuacion}}  &#11088;</span>
+    <span>
+
+        <span [class]="t.puntuacion/t.contpuntuacion>=1? 'fa fa-star checked': 'fa fa-star'"></span>
+        <span [class]="t.puntuacion/t.contpuntuacion>=2? 'fa fa-star checked': 'fa fa-star'"></span>
+        <span [class]="t.puntuacion/t.contpuntuacion>=3? 'fa fa-star checked': 'fa fa-star'"></span>
+        <span [class]="t.puntuacion/t.contpuntuacion>=4? 'fa fa-star checked': 'fa fa-star'"></span>
+        <span [class]="t.puntuacion/t.contpuntuacion>=5? 'fa fa-star checked': 'fa fa-star'"></span>
+
+    </span>
     <span>Tokens:  {{t.precio}}  &#9678;</span>
     
     <!--cuando sepamos como relacionar datos ya lo haremos bien -->

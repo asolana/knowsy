@@ -28,3 +28,21 @@ aside{
         button{
             margin-right: 1%;
         }
+
+        .checked {
+            color: #ffa500;
+          }
+
+          .alert{
+              position: absolute;
+              left: 10vw;
+              top: -15vh;
+              z-index: 10;
+          }
+figure>img{
+    width:100%;
+}
+
+section:last-of-type{
+  position: relative;  
+}

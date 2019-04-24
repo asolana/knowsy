@@ -23,7 +23,6 @@ export class ListadoTrabajosComponent implements OnInit {
     // console.log(this.trabajos);
 
     this._traServ.getTrabajosFromAPI().subscribe((datos) => {
-      console.log('datos:', datos);
       this.trabajos = datos;
     });
 

@@ -1,11 +1,20 @@
-<section>
-
-  <article>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+<section class="row m-0">
+  
+  <article class="col-sm-5">
     
-      <h5>Servicio: {{trabajo?.nombre}}</h5>
-      <h5>Puntuación: {{trabajo?.puntuacion}}</h5>
-      <h5>Tokens: {{trabajo?.tokens}} <span>&#9678;</span></h5>
-      <h5>Precio:{{trabajo?.precio}}</h5><br />
+      <h2>{{trabajo?.nombre}}</h2>
+      <div>
+        <span>
+          <span [class]="trabajo?.puntuacion/trabajo?.contpuntuacion>=1? 'fa fa-star checked': 'fa fa-star'"></span>
+          <span [class]="trabajo?.puntuacion/trabajo?.contpuntuacion>=2? 'fa fa-star checked': 'fa fa-star'"></span>
+          <span [class]="trabajo?.puntuacion/trabajo?.contpuntuacion>=3? 'fa fa-star checked': 'fa fa-star'"></span>
+          <span [class]="trabajo?.puntuacion/trabajo?.contpuntuacion>=4? 'fa fa-star checked': 'fa fa-star'"></span>
+          <span [class]="trabajo?.puntuacion/trabajo?.contpuntuacion>=5? 'fa fa-star checked': 'fa fa-star'"></span>
+      </span>
+      </div>
+      <h5>Precio: {{trabajo?.precio}} &#9678;</h5><br />
 
       <div>
           <button class="btn btn-primary" (click)="contratar()"> Contratar</button>
@@ -14,10 +23,17 @@
   </article>  
 
 
-  <figure><img [src]="trabajo?.img" alt="foto"/></figure>
+  <figure class="col-sm-5"><img [src]="trabajo?.img" alt="foto"/></figure>
 </section>
+<section class="row m-0">
+    <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>¡Atención!</strong> Puedes puntuar el trabajo recibido
+      </div>
+</section>
+</div>
 
-<aside class="alert alert-warning alert-dismissable">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>¡Atento!</strong> Puedes puntuar el trabajo recibido
-</aside>
+
+
+
+
