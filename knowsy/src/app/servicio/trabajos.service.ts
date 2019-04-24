@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError, of, BehaviorSubject } from 'rxjs';
+import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { Trabajo } from '../modelo/trabajo';
 import { environment} from '../../environments/environment';
 
@@ -63,7 +63,8 @@ export class TrabajosService {
     );
   }
 
-  buscarTrabajosUsuario(idUsuario: string):void {
+  
+  buscarTrabajosUsuario(idUsuario: string): void{
     this._http.get<Trabajo[]>(`${environment.API_URL}/tareas`).subscribe(
       data => {
         this._trabajos = data.filter( unT=> unT.idusuario.indexOf(idUsuario.toLowerCase())>=0 );
@@ -91,20 +92,30 @@ export class TrabajosService {
   //Funcion que recoje la valoracion de un trabajo y actualiza
   setValoracion(id,valoracion){
     var trab : Trabajo;
-    this._http.get<Trabajo>(`${environment.API_URL}/tareas:id`).subscribe(trabajo => {
+    this._http.get<Trabajo>(`${environment.API_URL}/tareas/${id}`).subscribe(trabajo => {
       trab = trabajo;
       trab.contpuntuacion ++;
       trab.contpuntuacion == 0 ? trab.puntuacion = valoracion : trab.puntuacion += valoracion;
     });
-    this._http.post<Trabajo>(`${environment.API_URL}/tareas:id`,trab);
+    this._http.post<Trabajo>(`${environment.API_URL}/tareas/${id}`,trab);
   }
 
   getValoracion(id):Number{
     let valoracion = 0;
-    this._http.get<Trabajo>(`${environment.API_URL}/tareas:id`).subscribe(trabajo => {
+    this._http.get<Trabajo>(`${environment.API_URL}/tareas/${id}`).subscribe(trabajo => {
       valoracion = trabajo.puntuacion/trabajo.contpuntuacion;
     });
     return valoracion;  
+  }
+
+  //Funcion para eliminar
+  deleteTrabajo(id): Observable<Trabajo>{
+    return this._http.delete<Trabajo>(`${environment.API_URL}/tareas/${id}`);
+  }
+
+  //Funcion para editar
+  editTrabajo(id,trabajo){
+    return this._http.put<Trabajo>(`${environment.API_URL}/tareas/${id}`,trabajo);
   }
 
 }

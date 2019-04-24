@@ -1,31 +1,57 @@
-<section class="container-fluid">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<section class="container">
   <div class="row">
-      <figure class="col-md-3">
-          <h2>{{usuario.nombre}}</h2>
-          <img [src]="usuario.img" alt="foto"/>
+      <figure class="col-sm">
+          <h2>{{usuario?.nombre}}</h2>
+          <img [src]="usuario?.img" alt="foto"/>
       </figure>
-      <article class="col-6">
+      <article class="col-lg-5">
         <p>
           <span>Disponibilidad: </span>
-          <span>{{usuario.estado?"Disponible":"Ocupado"}}</span>
+          <span>{{usuario?.estado?"Disponible":"Ocupado"}}</span>
         </p>
         <p>
           <span>Tokens: </span>
-          <span>{{usuario.tokens}}</span><span>&#9678;</span>
+          <span>{{usuario?.tokens}}</span><span>&#9678;</span>
         </p>
         <p>
           <span>¿Es de fiar?</span>
-          <span [class]="usuario.fiable?'fiable':'noDeFiar'">{{usuario.fiable?"¡Es de fiar!":"Cuidado este usuario tiene muy malas valoraciones"}}</span>
+          <span [class]="usuario?.fiable?'fiable':'noDeFiar'">{{usuario?.fiable?"¡Es de fiar!":"Cuidado este usuario tiene muy malas valoraciones"}}</span>
         </p>
         <p>
-            {{usuario.descripcion}}
-        </p> <br /><br /> 
-
-        <div><button class="btn btn-primary" [routerLink]="['/trabajos/nuevatarea/', uid]">Nuevo servicio</button></div>
-        <div><button class="btn btn-primary">Editar servicio</button>
-        <button class="btn btn-primary" id="eliminar">Eliminar servicio</button></div>
+            {{usuario?.descripcion}}
+        </p>    
+        <button class="btn btn-primary" [routerLink]="['/trabajos/nuevatarea/', uid]">Nuevo servicio</button>
       </article>
+      <aside class="serv col-sm">
+          <h3>Que trabajos ofrezco:</h3>
+          <article *ngFor='let t of trabajos'>
+            <div>{{t.nombre}}</div>
+            <div>{{t.descripcion}}</div>
+            <div>
+              <span>Tokens</span>
+              <span>{{t.precio}}</span>
+                  <span>
+                      <span [class]="t.puntuacion>=1? 'fa fa-star checked': 'fa fa-star'"></span>
+                      <span [class]="t.puntuacion>=2? 'fa fa-star checked': 'fa fa-star'"></span>
+                      <span [class]="t.puntuacion>=3? 'fa fa-star checked': 'fa fa-star'"></span>
+                      <span [class]="t.puntuacion>=4? 'fa fa-star checked': 'fa fa-star'"></span>
+                      <span [class]="t.puntuacion>=5? 'fa fa-star checked': 'fa fa-star'"></span>
+                      <pre>{{t.puntuacion>=1}}</pre>
+                  </span> 
+
+            </div>
+              <button (click)="buscar()">ELIMINAR</button>
+              <button>EDITAR</button>
+          </article>
+          
+        
+        </aside>
   
   </div>
+  
+    
     
 </section>
+
+
