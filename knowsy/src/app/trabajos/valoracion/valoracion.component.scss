@@ -6,16 +6,25 @@ display: inline-block;
 
 aside{
     display: inline-block;
+    
+    figure{
+        margin: 1em;
+        
+        img{
+            width: 100%;
+        }
+    }
+    
 }
 
-    div{
-       padding-top: 10%;
-    }
+div{
+    padding-top: 10%;
+}
 
-    button{
-        margin-top: 3%;
-        margin-right: 2%;
-    }
+button{
+    margin-top: 3%;
+    margin-right: 2%;
+}
 
 .checked {
     color: #ffa500;
