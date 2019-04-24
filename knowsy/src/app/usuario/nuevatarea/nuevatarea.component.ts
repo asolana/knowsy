@@ -11,7 +11,7 @@ import { Trabajo } from 'src/app/modelo/trabajo';
   styleUrls: ['./nuevatarea.component.scss']
 })
 export class NuevatareaComponent implements OnInit {
-  nuevoTrabajo= new Trabajo(0,"","",0,0, "",0,"","");
+  nuevoTrabajo= new Trabajo(0,"","",0,0,"",0,"","");
 
   constructor(private _tarServ:TrabajosService, private _route: ActivatedRoute, private _router: Router)  { }
   ngOnInit() {

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class NuevoUsuarioComponent implements OnInit {
 
-  nuevoUsuario = new Usuario(0, null,null,null,null,null,null,0,null);
+  nuevoUsuario = new Usuario(0,"","","","","",true,0,true);
 
   constructor(private _usuarioServ: UsuarioService, private _router: Router) { }
 
